@@ -1,25 +1,18 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
 var app = {
     // Application Constructor
     initialize: function() {
         this.bindEvents();
+
+        // Create HTML Templates
+        this.headerTmpl = Handlebars.compile($("#header-tmpl").html());
+        this.contentTmpl = Handlebars.compile($("#content-tmpl").html());
+        this.footerTmpl = Handlebars.compile($("#footer-tmpl").html());
+
+        // Render page view
+        $('body').html(this.headerTmpl() + this.contentTmpl() + this.footerTmpl());
+        this.renderBodyView(new HomeView().render().el);
+        
+        //$('#content-tmpl').html(new HomeView().render().el);
     },
     // Bind Event Listeners
     //
@@ -45,6 +38,12 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+    },
+
+    renderBodyView: function(content) {
+        console.log(content);
+        $('#content').html(content);
+
     }
 };
 
