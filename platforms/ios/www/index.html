@@ -15,45 +15,64 @@
 </head>
 <body>
 
-<div id="content" data-role="page">
-
-
 <!-- HTML Handlebar TEMPLATES -->
-<script id="header-tmpl" type="text/x-handlebars-template">
-    <div data-role="header">
-        <h1>ECAASU!</h1>
-    </div> <!-- /header -->
+<!-- Home body -->
+<script id="home-tmpl" type="text/x-handlebars-template">
+    <div id="home-content" data-role="content">
+    <h2>HOME</h2>
+    </div>
 </script>
 
-
-<script id="content-tmpl" type="text/x-handlebars-template">
-    <div data-role="content">
-    <h2>Hello!!!</h2>
-    </div> <!-- /content -->
+<!-- Map map -->
+<script id="map-tmpl" type="text/x-handlebars-template">
+    <div id="map-content">
+    <h2>MAP</h2>
+    </div>
 </script>
 
-<script id="footer-tmpl" type="text/x-handlebars-template">
-    <div class="footer" data-role="footer" style="overflow:hidden;">
-        <div data-role="navbar">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Map</a></li>
-                <li><a href="#">Feed</a></li>
-                <li><a href="#">About</a></li>
-            </ul>
-        </div><!-- /navbar -->
-    </div><!-- /footer -->
+<!-- Feed body -->
+<script id="feed-tmpl" type="text/x-handlebars-template">
+    <div id="feed-content">
+    <h2>FEED</h2>
+    </div>
+</script>
+
+<!-- About body -->
+<script id="about-tmpl" type="text/x-handlebars-template">
+    <div id="about-content">
+    <h2>ABOUT</h2>
+    </div>
 </script>
 <!-- /HTML Handlebar TEMPLATES -->
 
 
-</div> <!-- /page -->
+
+<div data-role="page" id="body">
+    <div data-role="header">
+        <h1>ECAASU</h1>
+    </div> <!-- /header -->
+
+    <div id="body-content" data-role="content">
+    </div>
+
+    <div id="footer" data-role="footer" data-position="fixed" style="overflow:hidden;">
+        <div data-role="navbar">
+            <ul>
+                <li><a data-href="home-tmpl" href="#">Home</a></li>
+                <li><a data-href="map-tmpl" href="#">Map</a></li>
+                <li><a data-href="feed-tmpl" href="#">Feed</a></li>
+                <li><a data-href="about-tmpl" href="#">About</a></li>
+            </ul>
+        </div><!-- /navbar -->
+    </div><!-- /footer -->
+</div> <!-- /body -->
 
     <script type="text/javascript" src="js/cordova.js"></script> <!-- take out js/ -->
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/jquery.mobile-1.4.5.js"></script>
     <script type="text/javascript" src="js/handlebars.js"></script> <!-- lib/handlebars.js -->
     <script type="text/javascript" src="js/homeView.js"></script>
+    <script type="text/javascript" src="js/aboutView.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>

@@ -2,17 +2,8 @@ var app = {
     // Application Constructor
     initialize: function() {
         this.bindEvents();
-
-        // Create HTML Templates
-        this.headerTmpl = Handlebars.compile($("#header-tmpl").html());
-        this.contentTmpl = Handlebars.compile($("#content-tmpl").html());
-        this.footerTmpl = Handlebars.compile($("#footer-tmpl").html());
-
-        // Render page view
-        $('body').html(this.headerTmpl() + this.contentTmpl() + this.footerTmpl());
-        this.renderBodyView(new HomeView().render().el);
-        
-        //$('#content-tmpl').html(new HomeView().render().el);
+        var html = Handlebars.compile($("#home-tmpl").html());
+        $('#body-content').html(html);
     },
     // Bind Event Listeners
     //
@@ -38,13 +29,27 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
-    },
-
-    renderBodyView: function(content) {
-        console.log(content);
-        $('#content').html(content);
-
     }
 };
 
+$(document).on('vclick', 'div[data-role="navbar"] a', function() {
+    console.log($(this).attr("data-href"));
+    var el = $(this).attr("data-href")
+    var html = Handlebars.compile($("#"+el).html());
+    //$.mobile.changePage("#"+$(this).attr("data-href"));
+    $('#body-content').html(html);
+});
+
 app.initialize();
+
+
+
+
+
+
+
+
+
+
+
+

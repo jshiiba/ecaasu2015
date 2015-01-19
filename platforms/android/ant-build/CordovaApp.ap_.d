@@ -780,6 +780,7 @@
 /Users/Jshiiba/Developer/ecaasu/platforms/android/assets/www/jquery.mobile-1.4.5/images/icons-svg/user-white.svg \
 /Users/Jshiiba/Developer/ecaasu/platforms/android/assets/www/jquery.mobile-1.4.5/images/icons-svg/video-black.svg \
 /Users/Jshiiba/Developer/ecaasu/platforms/android/assets/www/jquery.mobile-1.4.5/images/icons-svg/video-white.svg \
+/Users/Jshiiba/Developer/ecaasu/platforms/android/assets/www/js/aboutView.js \
 /Users/Jshiiba/Developer/ecaasu/platforms/android/assets/www/js/cordova.js \
 /Users/Jshiiba/Developer/ecaasu/platforms/android/assets/www/js/handlebars.js \
 /Users/Jshiiba/Developer/ecaasu/platforms/android/assets/www/js/homeView.js \

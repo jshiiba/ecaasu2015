@@ -1,8 +1,18 @@
 
 /* Footer Tab Bar */
-.footer {
+#footer {
   position: fixed;
   bottom:0;
   left:0;
   width: 100%;
 }
+
+
+/*.ui-content {
+    padding: 0 !important;
+}
+ 
+.ui-listview {
+    margin: 0 !important;
+}*/
+ 

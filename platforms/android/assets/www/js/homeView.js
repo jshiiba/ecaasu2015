@@ -13,4 +13,4 @@ var HomeView = function() {
 	this.initialize();
 }
 
-HomeView.template = Handlebars.compile($("#content-tmpl").html());
+HomeView.template = Handlebars.compile($("#home-tmpl").html());
