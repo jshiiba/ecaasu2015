@@ -1,7 +1,8 @@
-var HomeView = function() {
+var HomeView = function(database) {
 
 	this.initialize = function() {
 		var self = this;
+		this.db = database;
 	};
 
 	this.render = function() {
@@ -11,7 +12,7 @@ var HomeView = function() {
 
 	this.loadEvents = function() {
 		var li = "";
-		$.each(eventDB, function(index, evt) {
+		$.each(this.db.events, function(index, evt) {
 			li += HomeView.liTemplate(evt);
 		});
 		$(".event-list").html(li);

@@ -6,3 +6,35 @@
   left:0;
   width: 100%;
 }
+
+.ui-content {
+    padding: 0;
+}
+ 
+.ui-listview {
+    margin: 0;
+}
+
+#navbar .ui-btn {
+  height:40px;
+}
+
+.scroll {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    position: absolute;
+    top: 45px;
+    bottom: 60px; /* prevents nav bar overlaps */
+    left: 0px;
+    right: 0px;
+}
+
+.ui-content .ui-listview {
+  margin:0px;
+}
+
+li>a.tappable-active {
+    color: #fff;
+    background-color: #4286f5;
+}
+

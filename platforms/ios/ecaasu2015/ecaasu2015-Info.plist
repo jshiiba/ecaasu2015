@@ -182,5 +182,24 @@
         <string>{768, 1024}</string>
       </dict>
     </array>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Show your location on the map</string>
+    <key>Google Maps API Key</key>
+    <string>AIzaSyC6divHGPBBuxxovc7m6-ye0rUWiDE0GQQ</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>Trace your location on the map</string>
+    <key>CFBundleURLTypes</key>
+    <array>
+      <dict>
+        <key>CFBundleTypeRole</key>
+        <string>Editor</string>
+        <key>CFBundleURLName</key>
+        <string>com.jshiiba.ecaasu</string>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>com.jshiiba.ecaasu</string>
+        </array>
+      </dict>
+    </array>
   </dict>
 </plist>
