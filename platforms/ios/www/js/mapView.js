@@ -5,11 +5,21 @@ var MapView = function() {
 	};
 
 	this.render = function() {
-		$('#body-content').html(MapView.template);
-		var div = $('#map_canvas');
-		// var map = plugin.google.maps.Map.getMap(div);
-		// map.showDialog();
-		navigator.geolocation.getCurrentPosition(this.onSuccess,this.onError);
+		var temp = {"lat": 42.3744, "long": -71.1169};
+
+		console.log("platform: "+device.platform);
+
+		if (device.platform == 'iOS') {
+			console.log("iOS");
+		}
+		var temp = {"mapUrl": "maps://?q=42.3744,-71.1169"};
+
+		console.log("mapUrl: "+temp.mapUrl);
+		$('#body-content').html(MapView.template(temp));
+		
+
+		// geo:42.3744,71.1169
+
 	};
 
     this.onSuccess = function(position) {

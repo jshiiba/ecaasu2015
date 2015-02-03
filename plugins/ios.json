@@ -91,6 +91,10 @@
                 "parents": {
                     "/*": [
                         {
+                            "xml": "<feature name=\"Device\"><param name=\"ios-package\" value=\"CDVDevice\" /></feature>",
+                            "count": 1
+                        },
+                        {
                             "xml": "<feature name=\"Accelerometer\"><param name=\"ios-package\" value=\"CDVAccelerometer\" /></feature>",
                             "count": 1
                         },
@@ -175,6 +179,9 @@
             "PACKAGE_NAME": "com.jshiiba.ecaasu"
         },
         "com.googlemaps.ios": {
+            "PACKAGE_NAME": "com.jshiiba.ecaasu"
+        },
+        "org.apache.cordova.device": {
             "PACKAGE_NAME": "com.jshiiba.ecaasu"
         },
         "org.apache.cordova.device-motion": {

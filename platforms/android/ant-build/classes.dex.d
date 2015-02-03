@@ -7,6 +7,7 @@
 /Users/Jshiiba/Developer/ecaasu/platforms/android/ant-build/classes/com/jshiiba/ecaasu/R$string.class \
 /Users/Jshiiba/Developer/ecaasu/platforms/android/ant-build/classes/com/jshiiba/ecaasu/R$xml.class \
 /Users/Jshiiba/Developer/ecaasu/platforms/android/ant-build/classes/com/jshiiba/ecaasu/R.class \
+/Users/Jshiiba/Developer/ecaasu/platforms/android/ant-build/classes/org/apache/cordova/device/Device.class \
 /Users/Jshiiba/Developer/ecaasu/platforms/android/ant-build/classes/org/apache/cordova/devicemotion/AccelListener$1.class \
 /Users/Jshiiba/Developer/ecaasu/platforms/android/ant-build/classes/org/apache/cordova/devicemotion/AccelListener.class \
 /Users/Jshiiba/Developer/ecaasu/platforms/android/ant-build/classes/org/apache/cordova/deviceorientation/CompassListener$1.class \

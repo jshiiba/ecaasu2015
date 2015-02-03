@@ -795,11 +795,14 @@
 /Users/Jshiiba/Developer/ecaasu/platforms/android/assets/www/js/jquery.mobile-1.4.5.js \
 /Users/Jshiiba/Developer/ecaasu/platforms/android/assets/www/js/mapView.js \
 /Users/Jshiiba/Developer/ecaasu/platforms/android/assets/www/js/router.js \
+/Users/Jshiiba/Developer/ecaasu/platforms/android/assets/www/plugins/org.apache.cordova.device \
 /Users/Jshiiba/Developer/ecaasu/platforms/android/assets/www/plugins/org.apache.cordova.device-motion \
 /Users/Jshiiba/Developer/ecaasu/platforms/android/assets/www/plugins/org.apache.cordova.device-orientation \
 /Users/Jshiiba/Developer/ecaasu/platforms/android/assets/www/plugins/org.apache.cordova.statusbar \
 /Users/Jshiiba/Developer/ecaasu/platforms/android/assets/www/plugins/plugin.google.maps \
 /Users/Jshiiba/Developer/ecaasu/platforms/android/assets/www/plugins/plugin.http.request \
+/Users/Jshiiba/Developer/ecaasu/platforms/android/assets/www/plugins/org.apache.cordova.device/www \
+/Users/Jshiiba/Developer/ecaasu/platforms/android/assets/www/plugins/org.apache.cordova.device/www/device.js \
 /Users/Jshiiba/Developer/ecaasu/platforms/android/assets/www/plugins/org.apache.cordova.device-motion/www \
 /Users/Jshiiba/Developer/ecaasu/platforms/android/assets/www/plugins/org.apache.cordova.device-motion/www/Acceleration.js \
 /Users/Jshiiba/Developer/ecaasu/platforms/android/assets/www/plugins/org.apache.cordova.device-motion/www/accelerometer.js \
