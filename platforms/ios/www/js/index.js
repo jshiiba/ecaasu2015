@@ -66,8 +66,22 @@ var app = {
         // Listens for URL change
         $(window).on('hashchange', $.proxy(this.route, this)); 
 
-        // Changes hash route to render view from tab bar
-        $(document).on('click', 'div[data-role="navbar"] a', function() {
+        // Changes hash route to render view from home nav bar
+        $(document).on('click', '#home-navbar a', function() {
+            console.log('home navbar clicked');
+            var hash = $(this).attr("data-href");
+            window.location.hash = hash;
+        });
+
+        // Changes hash route to render view nav bar
+        $(document).on('click', 'div[data-role="header"] a', function() {
+            console.log('navbar clicked');
+            var hash = $(this).attr("data-href");
+            window.location.hash = hash;
+        });
+
+        $(document).on('click', 'div[data-role="header"] a', function() {
+            console.log('navbar clicked');
             var hash = $(this).attr("data-href");
             window.location.hash = hash;
         });
@@ -76,36 +90,49 @@ var app = {
     // Handles view routing
     route: function() {
         router.addRoute('', function() {
-            home = new HomeView(app.db);
-            home.render();
+            $('body').html(new HomeView().render().el);
         });
 
         router.addRoute('home', function() {
-            home = new HomeView(app.db);
-            home.render();
+            $('body').html(new HomeView().render().el);
         });  
 
-        router.addRoute('events/:id', function(id) {
+        router.addRoute('schedule', function() {
+            var view = new ScheduleView(app.db).render();
+            $('body').html(view.el);
+            view.registerScheduleEvents();
+        });
+
+        router.addRoute('schedule/:id', function(id) {
             app.db.findById(parseInt(id), function(evt){
-                var detailedView = new EventView(evt);
-                detailedView.render();
-            })
+                $('body').html(new EventView(evt, "schedule").render().el);
+            });
         });
 
-        router.addRoute('map', function() {
-            var map = new MapView();
-            map.render();
+        router.addRoute('workshops', function() {
+            var view = new WorkshopsView(app.db).render();
+            $('body').html(view.el);
+            view.registerWorkshopEvents();
         });
 
-        router.addRoute('feed', function() {
-            var feed = new FeedView();
-            feed.render();
-        });       
+        router.addRoute('workshops/:id', function(id) {
+            app.db.findById(parseInt(id), function(evt){
+                $('body').html(new EventView(evt, "workshops").render().el);
+            });
+        });
 
-        router.addRoute('about', function() {
-            var about = new AboutView();
-            about.render();
-        });  
+        router.addRoute('speakers', function() {
+            var view = new SpeakersView(app.db).render();
+            $('body').html(view.el);
+            view.registerSpeakerEvents();
+        });
+
+        router.addRoute('speakers/:id', function(id) {
+            app.db.findById(parseInt(id), function(evt){
+                $('body').html(new EventView(evt, "speakers").render().el);
+            });
+        });
+
 
         router.start();
     }

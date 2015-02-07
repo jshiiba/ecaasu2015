@@ -1,13 +1,20 @@
-var EventView = function(eventDetail) {
+var EventView = function(eventDetail, view) {
 	this.initialize = function() {
+		var self = this;
+		this.el = $('<div/>');
 		this.eventDetail = eventDetail;
+
+		if (view === "workshops") {
+			this.template = Handlebars.compile($("#workshop-event-details-tmpl").html());
+		} else {
+			this.template = Handlebars.compile($("#schedule-event-details-tmpl").html());
+		}
 	};
 
 	this.render = function() {
-		$('#body-content').html(EventView.template(this.eventDetail));
+		this.el.html(this.template(this.eventDetail));
+		return this;
 	};
 
 	this.initialize();
 }
-
-EventView.template = Handlebars.compile($("#event-details-tmpl").html());

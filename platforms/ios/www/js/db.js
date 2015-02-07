@@ -25,14 +25,14 @@ var Database = function(success, error) {
 
 	this.events = [ 
 		{"id": 1, "eventTitle": "Event 1", "location": "Harvard"},
-		{"id": 2, "eventTitle": "Event 2", "location": "Harvard"},
-		{"id": 3, "eventTitle": "Event 3", "location": "Harvard"},
-		{"id": 4, "eventTitle": "Event 4", "location": "Harvard"},
-		{"id": 5, "eventTitle": "Event 5", "location": "Harvard"},
-		{"id": 6, "eventTitle": "Event 6", "location": "Harvard"},
-		{"id": 7, "eventTitle": "Event 7", "location": "Harvard"},
-		{"id": 8, "eventTitle": "Event 8", "location": "Harvard"},
-		{"id": 9, "eventTitle": "Event 9", "location": "Harvard"}
+		{"id": 2, "eventTitle": "Event 2", "location": "MIT"},
+		{"id": 3, "eventTitle": "Event 3", "location": "Tufts"},
+		{"id": 4, "eventTitle": "Event 4", "location": "Brandeis"},
+		{"id": 5, "eventTitle": "Event 5", "location": "BU"},
+		{"id": 6, "eventTitle": "Event 6", "location": "BC"},
+		{"id": 7, "eventTitle": "Event 7", "location": "NE"},
+		{"id": 8, "eventTitle": "Event 8", "location": "Amherst"},
+		{"id": 9, "eventTitle": "Event 9", "location": "Tufts again"}
 	];
 
 	callLater(success);

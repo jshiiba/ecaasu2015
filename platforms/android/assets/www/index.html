@@ -11,98 +11,191 @@
     <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.css">
     <link rel="stylesheet" type="text/css" href="css/style.css" />
 
-    <title>Hello World</title>
+    <title>ECAASU 2015</title>
 </head>
 <body>
 
 <!-- HTML Handlebar TEMPLATES -->
 <!-- Home body -->
 <script id="home-tmpl" type="text/x-handlebars-template">
+
     <div id="home-content" class="scroll">
-        <ul data-role="listview" class="event-list ui-listview ui-group-theme-a" data-theme="a"></ul>
+    <ul id="home-navbar">
+        <li><a data-href="locations" href="#locations">Locations</a></li>
+        <li><a data-href="schedule" href="#schedule">Schedule</a></li>
+        <li><a data-href="workshops" href="#workshops">Workshops & Panels</a></li>
+        <li><a data-href="speakers" href="#speakers">Speakers & Performer</a></li>
+    </ul>
     </div>
 </script>
 
-<script id="event-tmpl" type="text/x-handlebars-template">
+
+<!-- Schedule templates -->
+<script id="schedule-tmpl" type="text/x-handlebars-template">
+    <div class="header" data-role="header">
+        <a class="header-button" data-href="home" href="#">
+        <span class="icon header-button-left">Back</span>
+        </a>
+        <h1 class="title">Schedule</h1>
+    </div> 
+
+    <div data-role="tabs" class="tabs">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#schedule-tab-one" data-ajax="false">Day 1</a></li>
+                <li><a href="#schedule-tab-two" data-ajax="false">Day 2</a></li>
+                <li><a href="#schedule-tab-three" data-ajax="false">Day 3</a></li>
+            </ul>
+        </div>
+
+        <div id="schedule-tab-content"></div>
+    </div>    
+</script>
+
+<script type="text/x-handlebars-template">
+    <div id="schedule-tab-one" class="ui-body-d ui-content">
+        <h2>Tab One</h2>
+        <ul data-role="listview" class="event-list table-view"></ul>
+    </div>
+</script>
+
+<script type="text/x-handlebars-template">
+    <div id="schedule-tab-two" class="ui-body-d ui-content">
+        <h2>Tab Two</h2>
+        <ul data-role="listview" class="event-list table-view"></ul>
+    </div>
+</script>
+
+<script type="text/x-handlebars-template">
+    <div id="schedule-tab-three" class="ui-body-d ui-content">
+        <h2>Tab Three</h2>
+        <ul data-role="listview" class="event-list table-view"></ul>
+    </div>
+</script>
+
+<script id="schedule-event-tmpl" type="text/x-handlebars-template">
     {{#.}}
-    <li><a href="#events/{{this.id}}" class="ui-btn ui-btn-icon-right ui-icon-carat-r"><h3>{{this.eventTitle}}</h3><p>{{this.location}}</p></a></li>
+    <li><a href="#schedule/{{this.id}}" class="table-view-cell media"><h3>{{this.eventTitle}}</h3><p>{{this.location}}</p></a></li>
     {{/.}}
 </script>
 
-<script id="event-details-tmpl" type="text/x-handlebars-template">
+<script id="schedule-event-details-tmpl" type="text/x-handlebars-template">
+    <div class="header" data-role="header">
+        <a class="header-button" data-href="schedule" href="#schedule">
+        <span class="icon header-button-left">Back</span>
+        </a>
+        <h1 class="title">{{eventTitle}}</h1>
+    </div> 
+
     <div class='details'>
-        <h1>{{eventTitle}}</h1>
+        <h2>{{location}}</h2>
+        <h2>{{time}}</h2>
+        <span class="location"></span>
+    </div>
+</script>
+<!-- /end Schedule templates -->
+
+
+
+
+<!-- Workshop templates -->
+<script id="workshop-tmpl" type="text/x-handlebars-template">
+    <div class="header" data-role="header">
+        <a class="header-button" data-href="home" href="#">
+        <span class="icon header-button-left">Back</span>
+        </a>
+        <h1 class="title">Workshops & Panels</h1>
+    </div> 
+
+    <div data-role="tabs" class="tabs">
+        <div data-role="navbar">
+            <ul>
+                <li><a id="workshops-tab-one" href="#" data-ajax="false">Day 1</a></li>
+                <li><a id="workshops-tab-two" href="#" data-ajax="false">Day 2</a></li>
+                <li><a id="workshops-tab-three" href="#" data-ajax="false">Day 3</a></li>
+            </ul>
+        </div>
+
+        <div id="workshops-tab-content"></div>
+    </div>
+</script>
+
+<script id="workshop-event-tmpl" type="text/x-handlebars-template">
+    {{#.}}
+    <li><a href="#workshops/{{this.id}}" class="table-view-cell media"><h3>{{this.eventTitle}}</h3><p>{{this.location}}</p></a></li>
+    {{/.}}
+</script>
+
+<script id="test2" type="text/x-handlebars-template">
+    {{#.}}
+    <li><a href="#workshops/{{this.id}}" class="table-view-cell media"><h3>{{this.eventTitle}}</h3><p>{{this.location}}</p></a></li>
+    {{/.}}
+</script>
+
+
+<script id="workshop-event-details-tmpl" type="text/x-handlebars-template">
+    <div class="header" data-role="header">
+        <a class="header-button" data-href="workshops" href="#workshops">
+        <span class="icon header-button-left">Back</span>
+        </a>
+        <h1 class="title">{{eventTitle}}</h1>
+    </div> 
+
+    <div class='details'>
         <h2>{{location}}</h2>
         <h2>{{time}}</h2>
         <span class="location"></span>
     </div>
 </script>
 
-<!-- Map map -->
-<script id="map-tmpl" type="text/x-handlebars-template">
-    <div id="map-content">
-    <h2>MAP</h2>
-    <a href="{{this.mapUrl}}">open map</a>
-    </div>
-</script>
-<!-- 42.3744,-71.1169 -->
-<!-- Feed body -->
-<script id="feed-tmpl" type="text/x-handlebars-template">
-    <div id="feed-content">
-    <h2>FEED</h2>
+<script id="workshops-tab-one-page" type="text/x-handlebars-template">
+    <div class="ui-body-d ui-content">
+        <h2>Workshops Tab One</h2>
+        <ul data-role="listview" class="event-list table-view"></ul>
     </div>
 </script>
 
-<!-- About body -->
-<script id="about-tmpl" type="text/x-handlebars-template">
-    <div id="about-content">
-    <h2>ABOUT</h2>
+<script id="workshops-tab-two-page" type="text/x-handlebars-template">
+    <div class="ui-body-d ui-content">
+        <h2>Workshops Tab Two</h2>
+        <ul data-role="listview" class="event-list table-view"></ul>
     </div>
 </script>
+
+<script id="workshops-tab-three-page" type="text/x-handlebars-template">
+    <div class="ui-body-d ui-content">
+        <h2>Workshops Tab Three</h2>
+        <ul data-role="listview" class="event-list table-view"></ul>
+    </div>
+</script>
+
+<script id="test" type="text/text/x-handlebars-template">
+    <h1>TEST</h1>
+</script>
+<!-- /end Workshop Templates -->
+
+
 <!-- /HTML Handlebar TEMPLATES -->
 
 
-
-<div data-role="page" id="body">
-    <div data-role="header">
-        <h1>ECAASU</h1>
-    </div> <!-- /header -->
-
-    <div id="body-content" data-role="content">
-    </div>
-
-    <div id="footer" data-role="footer" data-position="fixed" style="overflow:hidden;">
-        <div data-role="navbar" id="navbar">
-            <ul>
-                <li><a data-href="home" href="#">Home</a></li>
-                <li><a data-href="map" href="#map">Map</a></li>
-                <li><a data-href="feed" href="#feed">Feed</a></li>
-                <li><a data-href="about" href="#about">About</a></li>
-            </ul>
-        </div><!-- /navbar -->
-    </div><!-- /footer -->
-</div> <!-- /body -->
-
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script>
-    // Needed to activate hashchange
-    $(document).bind("mobileinit", function(){
-            $.mobile.pushStateEnabled = false;
-            $.mobile.ajaxEnabled = false;
-            $.mobile.hashListeningEnabled = false;
-    });
-    </script>
-    <script type="text/javascript" src="js/jquery.mobile-1.4.5.js"></script>
-    <script type="text/javascript" src="js/handlebars.js"></script>
-    <script type="text/javascript" src="js/router.js"></script> 
-    <script type="text/javascript" src="js/db.js"></script>
-    <script src="http://maps.googleapis.com/maps/api/js?v=3key=AIzaSyBtvVFsTE3y1Rad6urN9oc8RfcFGNpzrbU&sensor=SET_TO_TRUE_OR_FALSE"> </script>
-    <script type="text/javascript" src="js/homeView.js"></script>
-    <script type="text/javascript" src="js/mapView.js"></script>
-    <script type="text/javascript" src="js/feedView.js"></script>
-    <script type="text/javascript" src="js/aboutView.js"></script>
-    <script type="text/javascript" src="js/EventView.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
+<script src="cordova.js"></script>
+<script src="js/jquery.js"></script>
+<script>
+// Needed to activate hashchange
+$(document).bind("mobileinit", function(){
+        $.mobile.pushStateEnabled = false;
+        $.mobile.ajaxEnabled = false;
+        $.mobile.hashListeningEnabled = false;
+});
+</script>
+<script src="js/jquery.mobile-1.4.5.js"></script>
+<script src="js/handlebars.js"></script>
+<script src="js/router.js"></script> 
+<script src="js/db.js"></script>
+<script src="js/homeView.js"></script>
+<script src="js/EventView.js"></script>
+<script src="js/scheduleView.js"></script>
+<script src="js/workshopsView.js"></script>
+<script src="js/index.js"></script>
 </body>
 </html>

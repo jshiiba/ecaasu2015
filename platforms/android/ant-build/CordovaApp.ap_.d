@@ -795,6 +795,7 @@
 /Users/Jshiiba/Developer/ecaasu/platforms/android/assets/www/js/jquery.mobile-1.4.5.js \
 /Users/Jshiiba/Developer/ecaasu/platforms/android/assets/www/js/mapView.js \
 /Users/Jshiiba/Developer/ecaasu/platforms/android/assets/www/js/router.js \
+/Users/Jshiiba/Developer/ecaasu/platforms/android/assets/www/js/scheduleView.js \
 /Users/Jshiiba/Developer/ecaasu/platforms/android/assets/www/plugins/org.apache.cordova.device \
 /Users/Jshiiba/Developer/ecaasu/platforms/android/assets/www/plugins/org.apache.cordova.device-motion \
 /Users/Jshiiba/Developer/ecaasu/platforms/android/assets/www/plugins/org.apache.cordova.device-orientation \
