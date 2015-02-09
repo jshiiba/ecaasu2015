@@ -25,8 +25,6 @@ var app = {
         StatusBar.overlaysWebView( false );
         StatusBar.backgroundColorByHexString('#ffffff');
         StatusBar.styleDefault();
-        // Get current position
-       
         app.receivedEvent('deviceready');
     },
 
@@ -68,20 +66,17 @@ var app = {
 
         // Changes hash route to render view from home nav bar
         $(document).on('click', '#home-navbar a', function() {
-            console.log('home navbar clicked');
             var hash = $(this).attr("data-href");
             window.location.hash = hash;
         });
 
         // Changes hash route to render view nav bar
         $(document).on('click', 'div[data-role="header"] a', function() {
-            console.log('navbar clicked');
             var hash = $(this).attr("data-href");
             window.location.hash = hash;
         });
 
         $(document).on('click', 'div[data-role="header"] a', function() {
-            console.log('navbar clicked');
             var hash = $(this).attr("data-href");
             window.location.hash = hash;
         });

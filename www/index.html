@@ -39,9 +39,9 @@
         <h1 class="title">Schedule</h1>
     </div> 
 
-    <div data-role="tabs" class="tabs">
+    <div data-role="tabs">
         <div data-role="navbar">
-            <ul>
+            <ul class="tabs">
                 <li><a id="schedule-tab-one" href="#" data-ajax="false">Day 1</a></li>
                 <li><a id="schedule-tab-two" href="#" data-ajax="false">Day 2</a></li>
                 <li><a id="schedule-tab-three" href="#" data-ajax="false">Day 3</a></li>
@@ -72,7 +72,7 @@
 
 <script id="schedule-event-tmpl" type="text/x-handlebars-template">
     {{#.}}
-    <li><a href="#schedule/{{this.id}}" class="table-view-cell media"><h3>{{this.title}}</h3><p>{{this.loc_name}}</p></a></li>
+    <li><a href="#schedule/{{this.id}}" class="table-view-cell media"><h3>{{this.title}}</h3><p>{{this.location.name}}</p></a></li>
     {{/.}}
 </script>
 
@@ -85,14 +85,12 @@
     </div> 
 
     <div class='details'>
-        <h2>{{this.loc_name}}</h2>
+        <h2>{{this.location.name}}</h2>
         <h2>{{this.start_time}} - {{this.end_time}}</h2>
         <span class="location"></span>
     </div>
 </script>
 <!-- /end Schedule templates -->
-
-
 
 
 <!-- Workshop templates -->
@@ -104,9 +102,9 @@
         <h1 class="title">Workshops & Panels</h1>
     </div> 
 
-    <div data-role="tabs" class="tabs">
+    <div data-role="tabs">
         <div data-role="navbar">
-            <ul>
+            <ul class="tabs">
                 <li><a id="workshops-tab-one" href="#" data-ajax="false">Day 1</a></li>
                 <li><a id="workshops-tab-two" href="#" data-ajax="false">Day 2</a></li>
                 <li><a id="workshops-tab-three" href="#" data-ajax="false">Day 3</a></li>
@@ -119,7 +117,7 @@
 
 <script id="workshop-event-tmpl" type="text/x-handlebars-template">
     {{#.}}
-    <li><a href="#workshops/{{this.id}}" class="table-view-cell media"><h3>{{this.title}}</h3><p>{{this.loc_name}}</p></a></li>
+    <li><a href="#workshops/{{this.id}}" class="table-view-cell media"><h3>{{this.title}}</h3><p>{{this.location.name}}</p></a></li>
     {{/.}}
 </script>
 
@@ -132,7 +130,7 @@
     </div> 
 
     <div class='details'>
-        <h2>{{this.loc_name}}</h2>
+        <h2>{{this.location.name}}</h2>
         <h2>{{this.start_time}} - {{this.end_time}}</h2>
         <span class="location"></span>
     </div>
@@ -167,9 +165,9 @@
         <h1 class="title">Speakers & Performers</h1>
     </div> 
 
-    <div data-role="tabs" class="tabs">
+    <div data-role="tabs">
         <div data-role="navbar">
-            <ul>
+            <ul class="tabs">
                 <li><a id="speakers-tab-one" href="#" data-ajax="false">Day 1</a></li>
                 <li><a id="speakers-tab-two" href="#" data-ajax="false">Day 2</a></li>
                 <li><a id="speakers-tab-three" href="#" data-ajax="false">Day 3</a></li>

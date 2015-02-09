@@ -19,16 +19,20 @@ var Database = function(success, error) {
 	};
 
 	this.findById = function(id, callback) {
-		var events = this.events;
-		var evt = null;
-		var l = events.length;
-		for (var i=0; i < l; i++) {
-			if (events[i].id === id) {
-				evt = events[i];
-				break;
+		var url = "http://ecaasu2015.herokuapp.com/api/events/" + id;
+		console.log('url: '+url);
+		var request = new XMLHttpRequest();
+		request.open("GET", url, true);
+		request.onreadystatechange = function() {
+			if (request.readyState == 4) {
+				if (request.status == 200 || request.status == 0) {
+					var events = JSON.parse(request.responseText);
+					callLater(callback, events);
+				}
 			}
 		}
-		callLater(callback, evt);
+		console.log('requesting date events');
+		request.send();
 	}
 
 	this.findByDate = function(date, callback) {

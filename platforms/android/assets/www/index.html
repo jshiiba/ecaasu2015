@@ -39,9 +39,9 @@
         <h1 class="title">Schedule</h1>
     </div> 
 
-    <div data-role="tabs" class="tabs">
+    <div data-role="tabs">
         <div data-role="navbar">
-            <ul>
+            <ul class="tabs">
                 <li><a id="schedule-tab-one" href="#" data-ajax="false">Day 1</a></li>
                 <li><a id="schedule-tab-two" href="#" data-ajax="false">Day 2</a></li>
                 <li><a id="schedule-tab-three" href="#" data-ajax="false">Day 3</a></li>
@@ -54,28 +54,25 @@
 
 <script id="schedule-tab-one-page" type="text/x-handlebars-template">
     <div class="ui-body-d ui-content">
-        <h2>Tab One</h2>
         <ul data-role="listview" class="event-list table-view"></ul>
     </div>
 </script>
 
 <script id="schedule-tab-two-page" type="text/x-handlebars-template">
     <div class="ui-body-d ui-content">
-        <h2>Tab Two</h2>
         <ul data-role="listview" class="event-list table-view"></ul>
     </div>
 </script>
 
 <script id="schedule-tab-three-page" type="text/x-handlebars-template">
     <div class="ui-body-d ui-content">
-        <h2>Tab Three</h2>
         <ul data-role="listview" class="event-list table-view"></ul>
     </div>
 </script>
 
 <script id="schedule-event-tmpl" type="text/x-handlebars-template">
     {{#.}}
-    <li><a href="#schedule/{{this.id}}" class="table-view-cell media"><h3>{{this.eventTitle}}</h3><p>{{this.location}}</p></a></li>
+    <li><a href="#schedule/{{this.id}}" class="table-view-cell media"><h3>{{this.title}}</h3><p>{{this.location.name}}</p></a></li>
     {{/.}}
 </script>
 
@@ -84,12 +81,12 @@
         <a class="header-button" data-href="schedule" href="#schedule">
         <span class="icon header-button-left">Back</span>
         </a>
-        <h1 class="title">{{eventTitle}}</h1>
+        <h1 class="title">{{this.title}}</h1>
     </div> 
 
     <div class='details'>
-        <h2>{{location}}</h2>
-        <h2>{{time}}</h2>
+        <h2>{{this.location.name}}</h2>
+        <h2>{{this.start_time}} - {{this.end_time}}</h2>
         <span class="location"></span>
     </div>
 </script>
@@ -107,9 +104,9 @@
         <h1 class="title">Workshops & Panels</h1>
     </div> 
 
-    <div data-role="tabs" class="tabs">
+    <div data-role="tabs">
         <div data-role="navbar">
-            <ul>
+            <ul class="tabs">
                 <li><a id="workshops-tab-one" href="#" data-ajax="false">Day 1</a></li>
                 <li><a id="workshops-tab-two" href="#" data-ajax="false">Day 2</a></li>
                 <li><a id="workshops-tab-three" href="#" data-ajax="false">Day 3</a></li>
@@ -122,7 +119,7 @@
 
 <script id="workshop-event-tmpl" type="text/x-handlebars-template">
     {{#.}}
-    <li><a href="#workshops/{{this.id}}" class="table-view-cell media"><h3>{{this.eventTitle}}</h3><p>{{this.location}}</p></a></li>
+    <li><a href="#workshops/{{this.id}}" class="table-view-cell media"><h3>{{this.title}}</h3><p>{{this.location.name}}</p></a></li>
     {{/.}}
 </script>
 
@@ -131,19 +128,18 @@
         <a class="header-button" data-href="workshops" href="#workshops">
         <span class="icon header-button-left">Back</span>
         </a>
-        <h1 class="title">{{eventTitle}}</h1>
+        <h1 class="title">{{this.title}}</h1>
     </div> 
 
     <div class='details'>
-        <h2>{{location}}</h2>
-        <h2>{{time}}</h2>
+        <h2>{{this.location.name}}</h2>
+        <h2>{{this.start_time}} - {{this.end_time}}</h2>
         <span class="location"></span>
     </div>
 </script>
 
 <script id="workshops-tab-one-page" type="text/x-handlebars-template">
     <div class="ui-body-d ui-content">
-        <h2>Workshops Tab One</h2>
         <ul data-role="listview" class="event-list table-view"></ul>
     </div>
 </script>
@@ -156,7 +152,6 @@
 
 <script id="workshops-tab-three-page" type="text/x-handlebars-template">
     <div class="ui-body-d ui-content">
-        <h2>Workshops Tab Three</h2>
         <ul data-role="listview" class="event-list table-view"></ul>
     </div>
 </script>

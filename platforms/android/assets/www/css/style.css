@@ -238,3 +238,37 @@ li>a.tappable-active {
     color: #fff;
     background-color: #4286f5;
 }
+
+/****/
+.tabs {
+  display: table;
+  table-layout: fixed;
+  text-align: center;
+}
+
+.tabs li {
+  display: table-cell;
+  width: 1%;
+  padding-right: 1px;
+  height: auto;
+  vertical-align: bottom;
+}
+
+.tabs a {
+  display: block;
+  min-height: 100%;
+  padding: 4px 10px;
+  background-color: #222;
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+
+

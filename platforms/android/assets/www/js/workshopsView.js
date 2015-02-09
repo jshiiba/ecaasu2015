@@ -11,31 +11,36 @@ var WorkshopsView = function(database) {
         return this;
 	};
 
-	this.loadEvents = function() {
+	this.loadDateEvents = function(date) {
 		var li = "";
-		$.each(this.db.events, function(index, evt) {
-			li += WorkshopsView.liTemplate(evt);
+		this.db.findByDate(date, function(events) {
+			$.each(events, function(index, evt) {
+				li += WorkshopsView.liTemplate(evt);
+			});
+			$('.event-list').html(li);
 		});
-		$('.event-list').html(li);
 	};
 
 	this.registerWorkshopEvents = function() {
 		var self = this;
 		$('#workshops-tab-one').on('click', function() {
-			console.log('workshop tab 1 clicked!!');
 			$('#workshops-tab-content').html(WorkshopsView.tab_one());
+			self.loadDateEvents("2015-2-20");
 		});
 
 		$('#workshops-tab-two').on('click', function() {
-			console.log('workshop tab 2 clicked!!');
 			$('#workshops-tab-content').html(WorkshopsView.tab_two());
-			self.loadEvents();
+			self.loadDateEvents("2015-2-21");
 		});
 
 		$('#workshops-tab-three').on('click', function() {
-			console.log('workshop tab 3 clicked!!');
 			$('#workshops-tab-content').html(WorkshopsView.tab_three());
+			self.loadDateEvents("2015-2-22");
 		});
+
+		// Load first tab
+		$('#workshops-tab-content').html(WorkshopsView.tab_one());
+		self.loadDateEvents("2015-2-20");
 	}
 
 	this.initialize();

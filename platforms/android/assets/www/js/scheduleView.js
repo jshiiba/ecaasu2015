@@ -11,31 +11,35 @@ var ScheduleView = function(database) {
         return this;
 	};
 
-	this.loadEvents = function() {
+	this.loadDateEvents = function(date) {
 		var li = "";
-		$.each(this.db.events, function(index, evt) {
-			li += ScheduleView.liTemplate(evt);
+		this.db.findByDate(date, function(events) {
+			$.each(events, function(index, evt) {
+				li += ScheduleView.liTemplate(evt);
+			});
+			$('.event-list').html(li);
 		});
-		$('.event-list').html(li);
 	};
 
 	this.registerScheduleEvents = function() {
 		var self = this;
 		$('#schedule-tab-one').on('click', function() {
-			console.log('schedule tab 1 clicked!!');
 			$('#schedule-tab-content').html(ScheduleView.tab_one());
+			self.loadDateEvents("2015-2-20");
 		});
 
 		$('#schedule-tab-two').on('click', function() {
-			console.log('schedule tab 2 clicked!!');
 			$('#schedule-tab-content').html(ScheduleView.tab_two());
-			self.loadEvents();
+			self.loadDateEvents("2015-2-21");
 		});
 
 		$('#schedule-tab-three').on('click', function() {
-			console.log('schedule tab 3 clicked!!');
 			$('#schedule-tab-content').html(ScheduleView.tab_three());
+			self.loadDateEvents("2015-2-22");
 		});
+
+		$('#schedule-tab-content').html(ScheduleView.tab_one());
+		self.loadDateEvents("2015-2-20");
 	}
 
 
