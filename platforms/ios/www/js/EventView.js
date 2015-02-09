@@ -3,7 +3,6 @@ var EventView = function(eventDetail, view) {
 		var self = this;
 		this.el = $('<div/>');
 		this.eventDetail = eventDetail;
-		console.log("evemt view init");
 		if (view === "workshops") {
 			this.template = EventView.workshop_tmpl;
 		} else if (view === "speakers") {

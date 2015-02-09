@@ -22,18 +22,15 @@ var SpeakersView = function(database) {
 	this.registerSpeakerEvents = function() {
 		var self = this;
 		$('#speakers-tab-one').on('click', function() {
-			console.log('Speaker tab 1 clicked!!');
 			$('#speakers-tab-content').html(SpeakersView.tab_one());
 		});
 
 		$('#speakers-tab-two').on('click', function() {
-			console.log('Speaker tab 2 clicked!!');
 			$('#speakers-tab-content').html(SpeakersView.tab_two());
 			self.loadEvents();
 		});
 
 		$('#speakers-tab-three').on('click', function() {
-			console.log('Speaker tab 3 clicked!!');
 			$('#speakers-tab-content').html(SpeakersView.tab_three());
 		});
 	}

@@ -796,6 +796,9 @@
 /Users/Jshiiba/Developer/ecaasu/platforms/android/assets/www/js/mapView.js \
 /Users/Jshiiba/Developer/ecaasu/platforms/android/assets/www/js/router.js \
 /Users/Jshiiba/Developer/ecaasu/platforms/android/assets/www/js/scheduleView.js \
+/Users/Jshiiba/Developer/ecaasu/platforms/android/assets/www/js/speakersView.js \
+/Users/Jshiiba/Developer/ecaasu/platforms/android/assets/www/js/workshopsView.js \
+/Users/Jshiiba/Developer/ecaasu/platforms/android/assets/www/js/workshopView.js \
 /Users/Jshiiba/Developer/ecaasu/platforms/android/assets/www/plugins/org.apache.cordova.device \
 /Users/Jshiiba/Developer/ecaasu/platforms/android/assets/www/plugins/org.apache.cordova.device-motion \
 /Users/Jshiiba/Developer/ecaasu/platforms/android/assets/www/plugins/org.apache.cordova.device-orientation \

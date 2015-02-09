@@ -100,7 +100,7 @@ var app = {
         router.addRoute('schedule', function() {
             var view = new ScheduleView(app.db).render();
             $('body').html(view.el);
-            view.loadEvents();
+            view.registerScheduleEvents();
         });
 
         router.addRoute('schedule/:id', function(id) {
@@ -120,6 +120,19 @@ var app = {
                 $('body').html(new EventView(evt, "workshops").render().el);
             });
         });
+
+        router.addRoute('speakers', function() {
+            var view = new SpeakersView(app.db).render();
+            $('body').html(view.el);
+            view.registerSpeakerEvents();
+        });
+
+        router.addRoute('speakers/:id', function(id) {
+            app.db.findById(parseInt(id), function(evt){
+                $('body').html(new EventView(evt, "speakers").render().el);
+            });
+        });
+
 
         router.start();
     }

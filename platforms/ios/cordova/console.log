@@ -1350,3 +1350,67 @@ To disable web storage backup to iCloud, set the BackupWebStorage preference to 
 2015-02-07 10:35:34.977 ecaasu2015[31537:2840528] [CDVTimer][TotalPluginStartup] 241.421998ms
 2015-02-07 10:35:35.973 ecaasu2015[31537:2840528] Resetting plugins due to page load.
 2015-02-07 10:35:36.813 ecaasu2015[31537:2840528] Finished load of: file:///Users/Jshiiba/Library/Developer/CoreSimulator/Devices/6991C014-86EE-4EE4-9E41-B7E45876029C/data/Containers/Bundle/Application/DB608E67-40AA-4CB2-94D7-40152B8B0EF5/ecaasu2015.app/www/index.html
+2015-02-07 11:26:26.588 ecaasu2015[35128:2858972] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/Jshiiba/Library/Developer/CoreSimulator/Devices/6991C014-86EE-4EE4-9E41-B7E45876029C/data/Containers/Data/Application/568F9C55-320C-4A43-81B6-B3719C98E778/Library/Cookies/Cookies.binarycookies
+2015-02-07 11:26:29.045 ecaasu2015[35128:2858972] Apache Cordova native platform version 3.7.0 is starting.
+2015-02-07 11:26:29.046 ecaasu2015[35128:2858972] Multi-tasking -> Device: YES, App: YES
+2015-02-07 11:26:29.047 ecaasu2015[35128:2858972] Unlimited access to network resources
+2015-02-07 11:26:29.070 ecaasu2015[35128:2858972] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2015-02-07 11:26:29.674 ecaasu2015[35128:2858972] [CDVTimer][statusbar] 235.880971ms
+2015-02-07 11:26:29.675 ecaasu2015[35128:2858972] [CDVTimer][TotalPluginStartup] 236.073971ms
+2015-02-07 11:26:30.803 ecaasu2015[35128:2858972] Resetting plugins due to page load.
+2015-02-07 11:26:31.601 ecaasu2015[35128:2858972] Finished load of: file:///Users/Jshiiba/Library/Developer/CoreSimulator/Devices/6991C014-86EE-4EE4-9E41-B7E45876029C/data/Containers/Bundle/Application/8DB9F26F-9007-49E9-8B81-BBA3C63F055D/ecaasu2015.app/www/index.html
+2015-02-09 13:14:51.966 ecaasu2015[73970:3180597] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/Jshiiba/Library/Developer/CoreSimulator/Devices/6991C014-86EE-4EE4-9E41-B7E45876029C/data/Containers/Data/Application/6DBBD693-70D3-4C87-8E27-A87536615E9A/Library/Cookies/Cookies.binarycookies
+2015-02-09 13:14:54.017 ecaasu2015[73970:3180597] Apache Cordova native platform version 3.7.0 is starting.
+2015-02-09 13:14:54.018 ecaasu2015[73970:3180597] Multi-tasking -> Device: YES, App: YES
+2015-02-09 13:14:54.020 ecaasu2015[73970:3180597] Unlimited access to network resources
+2015-02-09 13:14:54.058 ecaasu2015[73970:3180597] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2015-02-09 13:14:56.124 ecaasu2015[73970:3180597] [CDVTimer][statusbar] 991.248965ms
+2015-02-09 13:14:56.124 ecaasu2015[73970:3180597] [CDVTimer][TotalPluginStartup] 991.450012ms
+2015-02-09 13:14:56.899 ecaasu2015[73970:3180597] Resetting plugins due to page load.
+2015-02-09 13:14:57.636 ecaasu2015[73970:3180597] Finished load of: file:///Users/Jshiiba/Library/Developer/CoreSimulator/Devices/6991C014-86EE-4EE4-9E41-B7E45876029C/data/Containers/Bundle/Application/05888C72-B0B0-4120-A580-A54061908B09/ecaasu2015.app/www/index.html
+2015-02-09 13:17:40.963 ecaasu2015[75980:3184721] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/Jshiiba/Library/Developer/CoreSimulator/Devices/6991C014-86EE-4EE4-9E41-B7E45876029C/data/Containers/Data/Application/F884FE71-CFA7-4624-9126-D7A1EB1C5ECC/Library/Cookies/Cookies.binarycookies
+2015-02-09 13:17:43.056 ecaasu2015[75980:3184721] Apache Cordova native platform version 3.7.0 is starting.
+2015-02-09 13:17:43.056 ecaasu2015[75980:3184721] Multi-tasking -> Device: YES, App: YES
+2015-02-09 13:17:43.058 ecaasu2015[75980:3184721] Unlimited access to network resources
+2015-02-09 13:17:43.145 ecaasu2015[75980:3184721] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2015-02-09 13:17:43.627 ecaasu2015[75980:3184721] [CDVTimer][statusbar] 166.846037ms
+2015-02-09 13:17:43.627 ecaasu2015[75980:3184721] [CDVTimer][TotalPluginStartup] 167.043984ms
+2015-02-09 13:17:44.452 ecaasu2015[75980:3184721] Resetting plugins due to page load.
+2015-02-09 13:17:45.026 ecaasu2015[75980:3184721] Finished load of: file:///Users/Jshiiba/Library/Developer/CoreSimulator/Devices/6991C014-86EE-4EE4-9E41-B7E45876029C/data/Containers/Bundle/Application/06CA398D-22C1-4290-AFB1-25BC41A6DFD0/ecaasu2015.app/www/index.html
+2015-02-09 14:19:00.539 ecaasu2015[82213:3215659] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/Jshiiba/Library/Developer/CoreSimulator/Devices/6991C014-86EE-4EE4-9E41-B7E45876029C/data/Containers/Data/Application/050000A2-8D13-4499-91B4-E082FBD35698/Library/Cookies/Cookies.binarycookies
+2015-02-09 14:19:03.497 ecaasu2015[82213:3215659] Apache Cordova native platform version 3.7.0 is starting.
+2015-02-09 14:19:03.530 ecaasu2015[82213:3215659] Multi-tasking -> Device: YES, App: YES
+2015-02-09 14:19:03.577 ecaasu2015[82213:3215659] Unlimited access to network resources
+2015-02-09 14:19:03.735 ecaasu2015[82213:3215659] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2015-02-09 14:19:05.243 ecaasu2015[82213:3215659] [CDVTimer][statusbar] 468.924999ms
+2015-02-09 14:19:05.243 ecaasu2015[82213:3215659] [CDVTimer][TotalPluginStartup] 469.143987ms
+2015-02-09 14:19:06.659 ecaasu2015[82213:3215659] Resetting plugins due to page load.
+2015-02-09 14:19:07.524 ecaasu2015[82213:3215659] Finished load of: file:///Users/Jshiiba/Library/Developer/CoreSimulator/Devices/6991C014-86EE-4EE4-9E41-B7E45876029C/data/Containers/Bundle/Application/EAB3E38D-BF4D-4C0A-AAE2-3FE541CFE02E/ecaasu2015.app/www/index.html
