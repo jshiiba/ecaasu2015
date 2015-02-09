@@ -7,7 +7,10 @@ var HomeView = function() {
 
 	this.render = function() {
 		this.el.html(HomeView.template());
-        return this;
+    $( ".splash-screen" ).animate({
+      top: "-100%"
+    }, 5000);
+    return this;
 	};
 
 	this.initialize();
