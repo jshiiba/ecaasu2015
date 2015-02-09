@@ -54,25 +54,36 @@
 
 <script id="schedule-tab-one-page" type="text/x-handlebars-template">
     <div class="ui-body-d ui-content">
+        <h2 class="schedule_day">Friday, February 20th</h2>
         <ul data-role="listview" class="event-list table-view"></ul>
     </div>
 </script>
 
 <script id="schedule-tab-two-page" type="text/x-handlebars-template">
     <div class="ui-body-d ui-content">
+        <h2 class="schedule_day">Saturday, February 21th</h2>
         <ul data-role="listview" class="event-list table-view"></ul>
     </div>
 </script>
 
 <script id="schedule-tab-three-page" type="text/x-handlebars-template">
     <div class="ui-body-d ui-content">
+        <h2 class="schedule_day">Sunday, February 22th</h2>
         <ul data-role="listview" class="event-list table-view"></ul>
     </div>
 </script>
 
 <script id="schedule-event-tmpl" type="text/x-handlebars-template">
     {{#.}}
-    <li><a href="#schedule/{{this.id}}" class="table-view-cell media"><h3>{{this.title}}</h3><p>{{this.location.name}}</p></a></li>
+    <li><a href="#schedule/{{this.id}}" class="table-view-cell media schedule_list">
+        <div class="schedule_time">
+            <p>3:00PM - 6:00PM</p>
+        </div>
+        <div class="schedule_container">
+            <h3>{{this.title}}</h3>
+            <p>{{this.location.name}}</p>
+        </div>
+    </a></li>
     {{/.}}
 </script>
 
@@ -91,8 +102,6 @@
     </div>
 </script>
 <!-- /end Schedule templates -->
-
-
 
 
 <!-- Workshop templates -->
@@ -167,9 +176,9 @@
         <h1 class="title">Speakers & Performers</h1>
     </div> 
 
-    <div data-role="tabs" class="tabs">
+    <div data-role="tabs">
         <div data-role="navbar">
-            <ul>
+            <ul class="tabs">
                 <li><a id="speakers-tab-one" href="#" data-ajax="false">Day 1</a></li>
                 <li><a id="speakers-tab-two" href="#" data-ajax="false">Day 2</a></li>
                 <li><a id="speakers-tab-three" href="#" data-ajax="false">Day 3</a></li>
@@ -182,7 +191,10 @@
 
 <script id="speakers-event-tmpl" type="text/x-handlebars-template">
     {{#.}}
-    <li><a href="#speakers/{{this.id}}" class="table-view-cell media"><h3>{{this.eventTitle}}</h3><p>{{this.location}}</p></a></li>
+    <li><a href="#speakers/{{this.id}}" class="table-view-cell media">
+        <h3>{{this.title}}</h3>
+        <p>{{this.location.name}}</p>
+    </a></li>
     {{/.}}
 </script>
 
@@ -191,12 +203,12 @@
         <a class="header-button" data-href="speakers" href="#speakers">
         <span class="icon header-button-left">Back</span>
         </a>
-        <h1 class="title">{{eventTspeakersitle}}</h1>
+        <h1 class="title">{{this.title}}</h1>
     </div> 
 
     <div class='details'>
-        <h2>{{location}}</h2>
-        <h2>{{time}}</h2>
+        <h2>{{this.location.name}}</h2>
+        <h2>{{this.start_time}}</h2>
         <span class="location"></span>
     </div>
 </script>

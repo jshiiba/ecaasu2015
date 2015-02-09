@@ -57,7 +57,7 @@ body {
 }
 
 .header {
-    background: #666;
+    background: #32d200;
     -webkit-background-size: 1px 44px;
     -moz-background-size: 1px 44px;
     -ms-background-size: 1px 44px;
@@ -72,10 +72,10 @@ body {
     border-bottom: solid 1px #eee;
 }
 
-.header h1 {
+.header h1.title {
     padding: 0;
     text-align: center;
-    font-size: 20px;
+    font-size: 16px;
     margin: 0;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -83,18 +83,16 @@ body {
     -webkit-box-flex: 1;
     -moz-box-flex: 1;
     box-flex: 1;
+    font-weight: normal;
 }
 
 .header-button {
     position: absolute;
     top: 6;
-    padding: 7px 5px;
+    padding: 14px 8px;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     line-height: 1em;
-}
-
-.header-button-left {
-    left: 4;
+    text-decoration: none;
 }
 
 .search-bar {
@@ -234,12 +232,12 @@ h2 {
     right: 0px;
 }
 
-li>a.tappable-active {
+/*li>a.tappable-active {
     color: #fff;
     background-color: #4286f5;
-}
+}*/
 
-/****/
+/** Tabs **/
 .tabs {
   display: table;
   table-layout: fixed;
@@ -257,12 +255,38 @@ li>a.tappable-active {
 .tabs a {
   display: block;
   min-height: 100%;
-  padding: 4px 10px;
-  background-color: #222;
-  color: white;
+  padding: 10px 10px;
+  /*background-color: #222;*/
+  border-right: 1px solid #858585;
+  font-weight: bold;
 }
 
+.tabs a:active {
+  border-bottom: 2px solid #32d200;
+}
 
+/** Schedule **/
+h2.schedule_day {
+  font-size: 18px;
+  margin: 15px;
+}
+
+.schedule_list {
+  padding:0px;
+}
+
+.schedule_time {
+  background-color: #CFCFCF;
+  padding: 1px;
+}
+
+.schedule_time p {
+  margin-left: 15px;
+}
+
+.schedule_container {
+  margin-left: 15px;
+}
 
 
 

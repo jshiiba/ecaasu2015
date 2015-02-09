@@ -1,26 +1,11 @@
 var Database = function(success, error) {
 
 	this.initialize = function() {
-		// var request = new XMLHttpRequest();
-		// request.open("GET", "http://ecaasu2015.herokuapp.com/api/events", true);
-		// request.onreadystatechange = function() {
-		// 	if (request.readyState == 4) {
-		// 		if (request.status == 200 || request.status == 0) {
-		// 			var response = JSON.parse(request.responseText);
-		// 			for (var i = 0; i < response.length; i++) {
-		// 				console.log(response[i]);
-		// 			};
-		// 		}
-		// 	}
-		// }
-		// console.log('requesting events');
-		// request.send();
 		callLater(success);
 	};
 
 	this.findById = function(id, callback) {
 		var url = "http://ecaasu2015.herokuapp.com/api/events/" + id;
-		console.log('url: '+url);
 		var request = new XMLHttpRequest();
 		request.open("GET", url, true);
 		request.onreadystatechange = function() {
@@ -31,13 +16,12 @@ var Database = function(success, error) {
 				}
 			}
 		}
-		console.log('requesting date events');
+		console.log('requesting id events');
 		request.send();
 	}
 
 	this.findByDate = function(date, callback) {
 		var url = "http://ecaasu2015.herokuapp.com/api/events?date=" + date;
-		console.log('url: '+url);
 		var request = new XMLHttpRequest();
 		request.open("GET", url, true);
 		request.onreadystatechange = function() {

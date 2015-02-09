@@ -1431,3 +1431,19 @@ To disable web storage backup to iCloud, set the BackupWebStorage preference to 
 2015-02-09 16:05:16.144 ecaasu2015[91784:3259524] Resetting plugins due to page load.
 2015-02-09 16:05:16.876 ecaasu2015[91784:3259524] THREAD WARNING: ['StatusBar'] took '20.870117' ms. Plugin should use a background thread.
 2015-02-09 16:05:16.893 ecaasu2015[91784:3259524] Finished load of: file:///Users/Jshiiba/Library/Developer/CoreSimulator/Devices/6991C014-86EE-4EE4-9E41-B7E45876029C/data/Containers/Bundle/Application/D6BED00A-944E-471F-8FCB-E9E0EA645DE2/ecaasu2015.app/www/index.html
+2015-02-09 17:14:24.882 ecaasu2015[98775:3297725] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/Jshiiba/Library/Developer/CoreSimulator/Devices/6991C014-86EE-4EE4-9E41-B7E45876029C/data/Containers/Data/Application/6181F0CD-EECC-44D7-B626-BF0C6AC9F3DD/Library/Cookies/Cookies.binarycookies
+2015-02-09 17:14:27.134 ecaasu2015[98775:3297725] Apache Cordova native platform version 3.7.0 is starting.
+2015-02-09 17:14:27.134 ecaasu2015[98775:3297725] Multi-tasking -> Device: YES, App: YES
+2015-02-09 17:14:27.136 ecaasu2015[98775:3297725] Unlimited access to network resources
+2015-02-09 17:14:27.160 ecaasu2015[98775:3297725] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2015-02-09 17:14:27.803 ecaasu2015[98775:3297725] [CDVTimer][statusbar] 246.647000ms
+2015-02-09 17:14:27.804 ecaasu2015[98775:3297725] [CDVTimer][TotalPluginStartup] 246.881962ms
+2015-02-09 17:14:28.725 ecaasu2015[98775:3297725] Resetting plugins due to page load.
+2015-02-09 17:14:29.306 ecaasu2015[98775:3297725] Finished load of: file:///Users/Jshiiba/Library/Developer/CoreSimulator/Devices/6991C014-86EE-4EE4-9E41-B7E45876029C/data/Containers/Bundle/Application/97B4C41D-51EA-4C0B-BCD7-6A2B0F868C8C/ecaasu2015.app/www/index.html
