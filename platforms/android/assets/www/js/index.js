@@ -128,7 +128,6 @@ var app = {
             });
         });
 
-
         router.start();
     }
 };

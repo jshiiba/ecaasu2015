@@ -16,7 +16,6 @@ var Database = function(success, error) {
 				}
 			}
 		}
-		console.log('requesting id events');
 		request.send();
 	}
 
@@ -29,13 +28,30 @@ var Database = function(success, error) {
 				if (request.status == 200 || request.status == 0) {
 					var events = JSON.parse(request.responseText);
 					for (var i = 0; i < events.length; i++) {
-						console.log(events[i]);
+						function hours12(date) { 
+							function pad(n) {
+						         return (n < 10) ? '0' + n : n;
+						    }
+							hours = date.getHours();
+							minutes = date.getMinutes();
+							if (hours > 12 && hours < 24) {
+								date = (hours-12) + ":" + pad(minutes) + "PM";
+							} else if (hours < 12) {
+								date = hours + ":" + pad(minutes) + "AM";
+							} else if (hours == 24) {
+								date = (hours-12) + ":" + pad(minutes) + "AM";
+							} else {
+								date = hours + ":" + pad(minutes) + "PM";
+							}
+							return date;
+						}
+						events[i].start_time = hours12(new Date(events[i].start_time));
+						events[i].end_time = hours12(new Date(events[i].end_time));
 					};
 					callLater(callback, events);
 				}
 			}
 		}
-		console.log('requesting date events');
 		request.send();
 	};
 
@@ -50,16 +66,4 @@ var Database = function(success, error) {
     };
 
     this.initialize();
-
-	this.events = [ 
-		{"id": 1, "eventTitle": "Event 1", "location": "Harvard"},
-		{"id": 2, "eventTitle": "Event 2", "location": "MIT"},
-		{"id": 3, "eventTitle": "Event 3", "location": "Tufts"},
-		{"id": 4, "eventTitle": "Event 4", "location": "Brandeis"},
-		{"id": 5, "eventTitle": "Event 5", "location": "BU"},
-		{"id": 6, "eventTitle": "Event 6", "location": "BC"},
-		{"id": 7, "eventTitle": "Event 7", "location": "NE"},
-		{"id": 8, "eventTitle": "Event 8", "location": "Amherst"},
-		{"id": 9, "eventTitle": "Event 9", "location": "Tufts again"}
-	];
 }

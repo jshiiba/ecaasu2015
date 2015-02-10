@@ -269,6 +269,11 @@ h2 {
 h2.schedule_day {
   font-size: 18px;
   margin: 15px;
+  background-color: white;
+}
+
+.schedule_body {
+  background-color: white;
 }
 
 .schedule_list {
