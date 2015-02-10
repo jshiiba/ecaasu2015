@@ -11,10 +11,14 @@ var SpeakersView = function(database) {
         return this;
 	};
 
-	this.loadEvents = function() {
+	this.loadSpeakerEvents = function(time) {
 		var li = "";
-		$.each(this.db.events, function(index, evt) {
-			li += SpeakersView.liTemplate(evt);
+		var events = this.db.performers;
+
+		$.each(events, function(index, evt) {
+			if (evt.time == time) {
+				li += SpeakersView.liTemplate(evt);
+			}
 		});
 		$('.event-list').html(li);
 	};
@@ -23,16 +27,17 @@ var SpeakersView = function(database) {
 		var self = this;
 		$('#speakers-tab-one').on('click', function() {
 			$('#speakers-tab-content').html(SpeakersView.tab_one());
+			self.loadSpeakerEvents("opening");
 		});
 
 		$('#speakers-tab-two').on('click', function() {
 			$('#speakers-tab-content').html(SpeakersView.tab_two());
-			self.loadEvents();
+			self.loadSpeakerEvents("closing");
 		});
 
-		$('#speakers-tab-three').on('click', function() {
-			$('#speakers-tab-content').html(SpeakersView.tab_three());
-		});
+		// Load first tab
+		$('#speakers-tab-content').html(SpeakersView.tab_one());
+		self.loadSpeakerEvents("opening");
 	}
 
 	this.initialize();

@@ -123,11 +123,10 @@ var app = {
         });
 
         router.addRoute('speakers/:id', function(id) {
-            app.db.findById(parseInt(id), function(evt){
+            app.db.findSpeakerById(parseInt(id), function(evt){
                 $('body').html(new EventView(evt, "speakers").render().el);
             });
         });
-
 
         router.start();
     }

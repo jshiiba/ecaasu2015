@@ -261,14 +261,19 @@ h2 {
   font-weight: bold;
 }
 
-.tabs a:active {
+/*.tabs a:active {
   border-bottom: 2px solid #32d200;
-}
+}*/
 
 /** Schedule **/
 h2.schedule_day {
   font-size: 18px;
   margin: 15px;
+  background-color: white;
+}
+
+.schedule_body {
+  background-color: white;
 }
 
 .schedule_list {
@@ -288,9 +293,26 @@ h2.schedule_day {
   margin-left: 15px;
 }
 
+/** Speakers **/
 
+.speakers_image {
+  width:80px;
+  height:80px;
+}
 
+.speakers_left {
+  float: left;
+  margin: 10px;
+}
 
+.speakers_right {
+  /*float:right;*/
+}
+
+.speakers_image_detail {
+  width:200px;
+  height: 200px;
+}
 
 
 
