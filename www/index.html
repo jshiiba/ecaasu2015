@@ -179,9 +179,8 @@
     <div data-role="tabs">
         <div data-role="navbar">
             <ul class="tabs">
-                <li><a id="speakers-tab-one" href="#" data-ajax="false">Day 1</a></li>
-                <li><a id="speakers-tab-two" href="#" data-ajax="false">Day 2</a></li>
-                <li><a id="speakers-tab-three" href="#" data-ajax="false">Day 3</a></li>
+                <li><a id="speakers-tab-one" href="#" data-ajax="false">Opening</a></li>
+                <li><a id="speakers-tab-two" href="#" data-ajax="false">Closing</a></li>
             </ul>
         </div>
 
@@ -192,8 +191,13 @@
 <script id="speakers-event-tmpl" type="text/x-handlebars-template">
     {{#.}}
     <li><a href="#speakers/{{this.id}}" class="table-view-cell media">
-        <h3>{{this.title}}</h3>
-        <p>{{this.location.name}}</p>
+        <span class="speakers_left">
+            <img class='speakers_image' src='img/performers/{{this.id}}.jpg' />
+        </span>
+        <span class="speakers_right">
+            <h3>{{this.name}}</h3>
+            <p>{{this.genre}}</p>
+        </span>
     </a></li>
     {{/.}}
 </script>
@@ -203,19 +207,19 @@
         <a class="header-button" data-href="speakers" href="#speakers">
         <span class="icon header-button-left">Back</span>
         </a>
-        <h1 class="title">{{this.title}}</h1>
+        <h1 class="title">{{this.name}}</h1>
     </div> 
 
     <div class='details'>
-        <h2>{{this.location.name}}</h2>
-        <h2>{{this.start_time}}</h2>
-        <span class="location"></span>
+        <h2>{{this.name}}</h2>
+        <h2>{{this.genre}}</h2>
+        <img class='speakers_image_detail' src='img/performers/{{this.id}}.jpg' />
+        <p class="speakers_description">{{this.description}}</p>
     </div>
 </script>
 
 <script id="speakers-tab-one-page" type="text/x-handlebars-template">
     <div class="ui-body-d ui-content">
-        <h2>Speakers Tab One</h2>
         <ul data-role="listview" class="event-list table-view"></ul>
     </div>
 </script>
@@ -228,7 +232,6 @@
 
 <script id="speakers-tab-three-page" type="text/x-handlebars-template">
     <div class="ui-body-d ui-content">
-        <h2>Speakers Tab Three</h2>
         <ul data-role="listview" class="event-list table-view"></ul>
     </div>
 </script>
