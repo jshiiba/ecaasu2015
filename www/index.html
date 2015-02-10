@@ -16,18 +16,26 @@
 <body>
 
 <!-- HTML Handlebar TEMPLATES -->
+<!-- Splash body -->
+<script id="splash-tmpl" type="text/x-handlebars-template">
+    <div class="splash-screen">
+        <img src="./img/logo.png" />
+        <h1 class="logo-name">ECAASU 2015</h1>
+    </div>
+</script>
+
 <!-- Home body -->
 <script id="home-tmpl" type="text/x-handlebars-template">
     <div class="home-container">
-        <div class="splash-screen">
-            <img src="../img/logo.png">
-        </div>
         <div id="home-content" class="scroll">
+            <img src="./img/logo.png" />
+            <h1 class="logo-name">ECAASU 2015</h1>
+
             <ul id="home-navbar">
-                <li><a data-href="locations" href="#locations">Locations</a></li>
-                <li><a data-href="schedule" href="#schedule">Schedule</a></li>
-                <li><a data-href="workshops" href="#workshops">Workshops & Panels</a></li>
-                <li><a data-href="speakers" href="#speakers">Speakers & Performer</a></li>
+                <li><a data-href="locations" href="#{}" class="red">Locations</a></li>
+                <li><a data-href="schedule" href="#" class="green">Schedule</a></li>
+                <li><a data-href="workshops" href="#" class="purple">Workshops & Panels</a></li>
+                <li><a data-href="speakers" href="#" class="blue">Speakers & Performers</a></li>
             </ul>
         </div>
     </div>
@@ -38,7 +46,7 @@
 <script id="schedule-tmpl" type="text/x-handlebars-template">
     <div class="header" data-role="header">
         <a class="header-button" data-href="home" href="#">
-        <span class="icon header-button-left">Back</span>
+        <span class="icon header-button-left"><img src="./img/back-arrow.png" /></span>
         </a>
         <h1 class="title">Schedule</h1>
     </div> 
@@ -94,7 +102,7 @@
 <script id="schedule-event-details-tmpl" type="text/x-handlebars-template">
     <div class="header" data-role="header">
         <a class="header-button" data-href="schedule" href="#schedule">
-        <span class="icon header-button-left">Back</span>
+        <span class="icon header-button-left"><img src="./img/back-arrow.png" /></span>
         </a>
         <h1 class="title">{{this.title}}</h1>
     </div> 
@@ -112,7 +120,7 @@
 <script id="workshop-tmpl" type="text/x-handlebars-template">
     <div class="header" data-role="header">
         <a class="header-button" data-href="home" href="#">
-        <span class="icon header-button-left">Back</span>
+        <span class="icon header-button-left"><img src="./img/back-arrow.png" /></span>
         </a>
         <h1 class="title">Workshops & Panels</h1>
     </div> 
@@ -139,7 +147,7 @@
 <script id="workshop-event-details-tmpl" type="text/x-handlebars-template">
     <div class="header" data-role="header">
         <a class="header-button" data-href="workshops" href="#workshops">
-        <span class="icon header-button-left">Back</span>
+        <span class="icon header-button-left"><img src="./img/back-arrow.png" /></span>
         </a>
         <h1 class="title">{{this.title}}</h1>
     </div> 
@@ -254,6 +262,7 @@ $(document).bind("mobileinit", function(){
 <script src="js/handlebars.js"></script>
 <script src="js/router.js"></script> 
 <script src="js/db.js"></script>
+<script src="js/splashView.js"></script>
 <script src="js/homeView.js"></script>
 <script src="js/EventView.js"></script>
 <script src="js/scheduleView.js"></script>
