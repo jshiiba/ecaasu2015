@@ -23,7 +23,7 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         StatusBar.overlaysWebView( false );
-        StatusBar.backgroundColorByHexString('#ffffff');
+        StatusBar.backgroundColorByHexString('#32d200');
         StatusBar.styleDefault();
         app.receivedEvent('deviceready');
     },

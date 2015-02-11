@@ -69,7 +69,6 @@ body {
     color: #fff;
     -webkit-user-select: none;
     -webkit-touch-callout: none;
-    border-bottom: solid 1px #eee;
 }
 
 .header h1.title {
