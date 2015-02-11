@@ -5,7 +5,10 @@
     <meta name="format-detection" content="telephone=no" />
     <meta name="msapplication-tap-highlight" content="no" />
     <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1,target-densitydpi=device-dpi" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
     <link rel="stylesheet" type="text/css" href="css/index.css" />
     <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.css">
@@ -21,7 +24,7 @@
 
     <div id="home-content" class="scroll">
     <ul id="home-navbar">
-        <li><a data-href="locations" href="#locations">Locations</a></li>
+        <li><a data-href="location" href="#location">Locations</a></li>
         <li><a data-href="schedule" href="#schedule">Schedule</a></li>
         <li><a data-href="workshops" href="#workshops">Workshops & Panels</a></li>
         <li><a data-href="speakers" href="#speakers">Speakers & Performer</a></li>
@@ -53,21 +56,21 @@
 </script>
 
 <script id="schedule-tab-one-page" type="text/x-handlebars-template">
-    <div class="ui-body-d ui-content">
+    <div class="ui-body-d ui-content schedule_body">
         <h2 class="schedule_day">Friday, February 20th</h2>
         <ul data-role="listview" class="event-list table-view"></ul>
     </div>
 </script>
 
 <script id="schedule-tab-two-page" type="text/x-handlebars-template">
-    <div class="ui-body-d ui-content">
+    <div class="ui-body-d ui-content schedule_body">
         <h2 class="schedule_day">Saturday, February 21th</h2>
         <ul data-role="listview" class="event-list table-view"></ul>
     </div>
 </script>
 
 <script id="schedule-tab-three-page" type="text/x-handlebars-template">
-    <div class="ui-body-d ui-content">
+    <div class="ui-body-d ui-content schedule_body">
         <h2 class="schedule_day">Sunday, February 22th</h2>
         <ul data-role="listview" class="event-list table-view"></ul>
     </div>
@@ -75,15 +78,18 @@
 
 <script id="schedule-event-tmpl" type="text/x-handlebars-template">
     {{#.}}
-    <li><a href="#schedule/{{this.id}}" class="table-view-cell media schedule_list">
+    <li><div class="table-view-cell media schedule_list">
         <div class="schedule_time">
-            <p>3:00PM - 6:00PM</p>
+            <p>{{this.start_time}} - {{this.end_time}}</p>
         </div>
-        <div class="schedule_container">
-            <h3>{{this.title}}</h3>
-            <p>{{this.location.name}}</p>
+        <a href="#schedule/{{this.id}}" class="media table-view-cell schedule_link">
+            <div class="schedule_container">
+                <h3>{{this.title}}</h3>
+                <p>{{this.location.name}}</p>
+            </div>
+        </a>
         </div>
-    </a></li>
+    </li>
     {{/.}}
 </script>
 
@@ -179,9 +185,8 @@
     <div data-role="tabs">
         <div data-role="navbar">
             <ul class="tabs">
-                <li><a id="speakers-tab-one" href="#" data-ajax="false">Day 1</a></li>
-                <li><a id="speakers-tab-two" href="#" data-ajax="false">Day 2</a></li>
-                <li><a id="speakers-tab-three" href="#" data-ajax="false">Day 3</a></li>
+                <li><a id="speakers-tab-one" href="#" data-ajax="false">Opening</a></li>
+                <li><a id="speakers-tab-two" href="#" data-ajax="false">Closing</a></li>
             </ul>
         </div>
 
@@ -192,8 +197,13 @@
 <script id="speakers-event-tmpl" type="text/x-handlebars-template">
     {{#.}}
     <li><a href="#speakers/{{this.id}}" class="table-view-cell media">
-        <h3>{{this.title}}</h3>
-        <p>{{this.location.name}}</p>
+        <span class="speakers_left">
+            <img class='speakers_image' src='img/performers/{{this.id}}.jpg' />
+        </span>
+        <span class="speakers_right">
+            <h3>{{this.name}}</h3>
+            <p>{{this.genre}}</p>
+        </span>
     </a></li>
     {{/.}}
 </script>
@@ -203,19 +213,19 @@
         <a class="header-button" data-href="speakers" href="#speakers">
         <span class="icon header-button-left">Back</span>
         </a>
-        <h1 class="title">{{this.title}}</h1>
+        <h1 class="title">{{this.name}}</h1>
     </div> 
 
     <div class='details'>
-        <h2>{{this.location.name}}</h2>
-        <h2>{{this.start_time}}</h2>
-        <span class="location"></span>
+        <h2>{{this.name}}</h2>
+        <h2>{{this.genre}}</h2>
+        <img class='speakers_image_detail' src='img/performers/{{this.id}}.jpg' />
+        <p class="speakers_description">{{this.description}}</p>
     </div>
 </script>
 
 <script id="speakers-tab-one-page" type="text/x-handlebars-template">
     <div class="ui-body-d ui-content">
-        <h2>Speakers Tab One</h2>
         <ul data-role="listview" class="event-list table-view"></ul>
     </div>
 </script>
@@ -228,11 +238,38 @@
 
 <script id="speakers-tab-three-page" type="text/x-handlebars-template">
     <div class="ui-body-d ui-content">
-        <h2>Speakers Tab Three</h2>
         <ul data-role="listview" class="event-list table-view"></ul>
     </div>
 </script>
 <!-- /end Speakers Templates -->
+
+
+
+<!-- locations templates -->
+<script id="location-tmpl" type="text/x-handlebars-template">
+    <div class="header" data-role="header">
+        <a class="header-button" data-href="home" href="#">
+        <span class="icon header-button-left">Back</span>
+        </a>
+        <h1 class="title">Locations</h1>
+    </div> 
+
+    <div class="ui-body-d ui-content">
+        <ul data-role="listview" class="event-list table-view"></ul>
+    </div>
+</script>
+
+<script id="location-event-tmpl" type="text/x-handlebars-template">
+    {{#.}}
+    <li><a href="{{this.mapUrl.mapUrl}}" class="table-view-cell media">
+            <h3>{{this.name}}</h3>
+    </a></li>
+    {{/.}}
+</script>
+<!-- /end locations templates -->
+
+
+
 <!-- /HTML Handlebar TEMPLATES -->
 
 
@@ -255,6 +292,7 @@ $(document).bind("mobileinit", function(){
 <script src="js/scheduleView.js"></script>
 <script src="js/workshopsView.js"></script>
 <script src="js/speakersView.js"></script>
+<script src="js/locationView.js"></script>
 <script src="js/index.js"></script>
 </body>
 </html>

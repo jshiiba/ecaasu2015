@@ -26,20 +26,30 @@ var ScheduleView = function(database) {
 		$('#schedule-tab-one').on('click', function() {
 			$('#schedule-tab-content').html(ScheduleView.tab_one());
 			self.loadDateEvents("2015-2-20");
+			$('#schedule-tab-one').addClass('active');
+			$('#schedule-tab-two').removeClass('active');
+			$('#schedule-tab-three').removeClass('active');
 		});
 
 		$('#schedule-tab-two').on('click', function() {
 			$('#schedule-tab-content').html(ScheduleView.tab_two());
 			self.loadDateEvents("2015-2-21");
+			$('#schedule-tab-one').removeClass('active');
+			$('#schedule-tab-two').addClass('active');
+			$('#schedule-tab-three').removeClass('active');
 		});
 
 		$('#schedule-tab-three').on('click', function() {
 			$('#schedule-tab-content').html(ScheduleView.tab_three());
 			self.loadDateEvents("2015-2-22");
+			$('#schedule-tab-one').removeClass('active');
+			$('#schedule-tab-two').removeClass('active');
+			$('#schedule-tab-three').addClass('active');
 		});
 
 		$('#schedule-tab-content').html(ScheduleView.tab_one());
 		self.loadDateEvents("2015-2-20");
+		$('#schedule-tab-one').addClass('active');
 	}
 
 

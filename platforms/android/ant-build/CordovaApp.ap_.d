@@ -46,6 +46,19 @@
 /Users/Chung/projects/repos/ecaasu2015/platforms/android/assets/www/fonts/BebasNeue.woff \
 /Users/Chung/projects/repos/ecaasu2015/platforms/android/assets/www/img/back-arrow.png \
 /Users/Chung/projects/repos/ecaasu2015/platforms/android/assets/www/img/logo.png \
+/Users/Chung/projects/repos/ecaasu2015/platforms/android/assets/www/img/performers \
+/Users/Chung/projects/repos/ecaasu2015/platforms/android/assets/www/img/performers/1.jpg \
+/Users/Chung/projects/repos/ecaasu2015/platforms/android/assets/www/img/performers/10.jpg \
+/Users/Chung/projects/repos/ecaasu2015/platforms/android/assets/www/img/performers/11.jpg \
+/Users/Chung/projects/repos/ecaasu2015/platforms/android/assets/www/img/performers/12.jpg \
+/Users/Chung/projects/repos/ecaasu2015/platforms/android/assets/www/img/performers/2.jpg \
+/Users/Chung/projects/repos/ecaasu2015/platforms/android/assets/www/img/performers/3.jpg \
+/Users/Chung/projects/repos/ecaasu2015/platforms/android/assets/www/img/performers/4.jpg \
+/Users/Chung/projects/repos/ecaasu2015/platforms/android/assets/www/img/performers/5.jpg \
+/Users/Chung/projects/repos/ecaasu2015/platforms/android/assets/www/img/performers/6.jpg \
+/Users/Chung/projects/repos/ecaasu2015/platforms/android/assets/www/img/performers/7.jpg \
+/Users/Chung/projects/repos/ecaasu2015/platforms/android/assets/www/img/performers/8.jpg \
+/Users/Chung/projects/repos/ecaasu2015/platforms/android/assets/www/img/performers/9.jpg \
 /Users/Chung/projects/repos/ecaasu2015/platforms/android/assets/www/jquery.mobile-1.4.5/demos \
 /Users/Chung/projects/repos/ecaasu2015/platforms/android/assets/www/jquery.mobile-1.4.5/images \
 /Users/Chung/projects/repos/ecaasu2015/platforms/android/assets/www/jquery.mobile-1.4.5/jquery.mobile-1.4.5.css \
@@ -797,6 +810,7 @@
 /Users/Chung/projects/repos/ecaasu2015/platforms/android/assets/www/js/index.js \
 /Users/Chung/projects/repos/ecaasu2015/platforms/android/assets/www/js/jquery.js \
 /Users/Chung/projects/repos/ecaasu2015/platforms/android/assets/www/js/jquery.mobile-1.4.5.js \
+/Users/Chung/projects/repos/ecaasu2015/platforms/android/assets/www/js/locationView.js \
 /Users/Chung/projects/repos/ecaasu2015/platforms/android/assets/www/js/mapView.js \
 /Users/Chung/projects/repos/ecaasu2015/platforms/android/assets/www/js/router.js \
 /Users/Chung/projects/repos/ecaasu2015/platforms/android/assets/www/js/scheduleView.js \

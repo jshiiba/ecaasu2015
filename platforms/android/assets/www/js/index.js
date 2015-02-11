@@ -23,7 +23,7 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         StatusBar.overlaysWebView( false );
-        StatusBar.backgroundColorByHexString('#ffffff');
+        StatusBar.backgroundColorByHexString('#32d200');
         StatusBar.styleDefault();
         app.receivedEvent('deviceready');
     },
@@ -131,11 +131,16 @@ var app = {
         });
 
         router.addRoute('speakers/:id', function(id) {
-            app.db.findById(parseInt(id), function(evt){
+            app.db.findSpeakerById(parseInt(id), function(evt){
                 $('body').html(new EventView(evt, "speakers").render().el);
             });
         });
 
+        router.addRoute('location', function() {
+            var view = new LocationView(app.db).render();
+            $('body').html(view.el);
+            view.loadLocations();
+        });
 
         router.start();
     }
