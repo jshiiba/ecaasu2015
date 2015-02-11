@@ -51,6 +51,20 @@ var Database = function(success, error) {
 		});
 	};
 
+	this.findLocations = function(callback) {
+		var request = new XMLHttpRequest();
+		request.open("GET", "http://ecaasu2015.herokuapp.com/api/locations", true);
+		request.onreadystatechange = function() {
+			if (request.readyState == 4) {
+				if (request.status == 200 || request.status == 0) {
+					var events = JSON.parse(request.responseText);
+					callLater(callback, events);
+				}
+			}
+		}
+		request.send();
+	};
+
     // Used to simulate async calls. This is done to provide a consistent interface with stores (like WebSqlStore)
     // that use async data access APIs
     var callLater = function(callback, data) {

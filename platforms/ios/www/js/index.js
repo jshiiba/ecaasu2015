@@ -128,6 +128,12 @@ var app = {
             });
         });
 
+        router.addRoute('location', function() {
+            var view = new LocationView(app.db).render();
+            $('body').html(view.el);
+            view.loadLocations();
+        });
+
         router.start();
     }
 };

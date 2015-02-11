@@ -21,7 +21,7 @@
 
     <div id="home-content" class="scroll">
     <ul id="home-navbar">
-        <li><a data-href="locations" href="#locations">Locations</a></li>
+        <li><a data-href="location" href="#location">Locations</a></li>
         <li><a data-href="schedule" href="#schedule">Schedule</a></li>
         <li><a data-href="workshops" href="#workshops">Workshops & Panels</a></li>
         <li><a data-href="speakers" href="#speakers">Speakers & Performer</a></li>
@@ -236,6 +236,34 @@
     </div>
 </script>
 <!-- /end Speakers Templates -->
+
+
+
+<!-- locations templates -->
+<script id="location-tmpl" type="text/x-handlebars-template">
+    <div class="header" data-role="header">
+        <a class="header-button" data-href="home" href="#">
+        <span class="icon header-button-left">Back</span>
+        </a>
+        <h1 class="title">Locations</h1>
+    </div> 
+
+    <div class="ui-body-d ui-content">
+        <ul data-role="listview" class="event-list table-view"></ul>
+    </div>
+</script>
+
+<script id="location-event-tmpl" type="text/x-handlebars-template">
+    {{#.}}
+    <li><a href="{{this.mapUrl.mapUrl}}" class="table-view-cell media">
+            <h3>{{this.name}}</h3>
+    </a></li>
+    {{/.}}
+</script>
+<!-- /end locations templates -->
+
+
+
 <!-- /HTML Handlebar TEMPLATES -->
 
 
@@ -258,6 +286,7 @@ $(document).bind("mobileinit", function(){
 <script src="js/scheduleView.js"></script>
 <script src="js/workshopsView.js"></script>
 <script src="js/speakersView.js"></script>
+<script src="js/locationView.js"></script>
 <script src="js/index.js"></script>
 </body>
 </html>

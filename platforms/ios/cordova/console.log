@@ -1479,3 +1479,22 @@ To disable web storage backup to iCloud, set the BackupWebStorage preference to 
 2015-02-10 14:29:09.978 ecaasu2015[41145:3531987] [CDVTimer][TotalPluginStartup] 385.212004ms
 2015-02-10 14:29:11.075 ecaasu2015[41145:3531987] Resetting plugins due to page load.
 2015-02-10 14:29:11.682 ecaasu2015[41145:3531987] Finished load of: file:///Users/Jshiiba/Library/Developer/CoreSimulator/Devices/6991C014-86EE-4EE4-9E41-B7E45876029C/data/Containers/Bundle/Application/101FC5C6-F20C-4A52-8312-D879ADDD782D/ecaasu2015.app/www/index.html
+2015-02-10 21:25:20.248 ecaasu2015[66481:3673446] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/Jshiiba/Library/Developer/CoreSimulator/Devices/6991C014-86EE-4EE4-9E41-B7E45876029C/data/Containers/Data/Application/76D55C5E-740F-480F-B4F1-243680FB829E/Library/Cookies/Cookies.binarycookies
+2015-02-10 21:25:22.651 ecaasu2015[66481:3673446] Apache Cordova native platform version 3.7.0 is starting.
+2015-02-10 21:25:22.651 ecaasu2015[66481:3673446] Multi-tasking -> Device: YES, App: YES
+2015-02-10 21:25:22.653 ecaasu2015[66481:3673446] Unlimited access to network resources
+2015-02-10 21:25:22.672 ecaasu2015[66481:3673446] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2015-02-10 21:25:23.275 ecaasu2015[66481:3673446] [CDVTimer][statusbar] 218.585968ms
+2015-02-10 21:25:23.276 ecaasu2015[66481:3673446] [CDVTimer][TotalPluginStartup] 218.824029ms
+2015-02-10 21:25:24.287 ecaasu2015[66481:3673446] Resetting plugins due to page load.
+2015-02-10 21:25:25.457 ecaasu2015[66481:3673446] This app uses phonegap-googlemaps-plugin version 1.2.4
+2015-02-10 21:25:25.588 ecaasu2015[66481:3673446] Finished load of: file:///Users/Jshiiba/Library/Developer/CoreSimulator/Devices/6991C014-86EE-4EE4-9E41-B7E45876029C/data/Containers/Bundle/Application/F1CEBE1E-DFD8-499B-A08B-19A146C94E49/ecaasu2015.app/www/index.html
+2015-02-10 21:25:40.145 ecaasu2015[66481:3673446] CDVWebViewDelegate: Navigation started when state=1
+2015-02-10 21:25:40.156 ecaasu2015[66481:3673446] Failed to load webpage with error: CDVWebViewDelegate: Navigation started when state=1
