@@ -231,12 +231,6 @@ h2 {
     left: 0px;
     right: 0px;
 }
-
-/*li>a.tappable-active {
-    color: #fff;
-    background-color: #4286f5;
-}*/
-
 /** Tabs **/
 .tabs {
   display: table;
@@ -256,14 +250,13 @@ h2 {
   display: block;
   min-height: 100%;
   padding: 10px 10px;
-  /*background-color: #222;*/
-  border-right: 1px solid #858585;
+  border-right: 1px solid #c4c4c4;
   font-weight: bold;
 }
 
-/*.tabs a:active {
-  border-bottom: 2px solid #32d200;
-}*/
+.active {
+    border-bottom: 2px solid #32d200;
+}
 
 /** Schedule **/
 h2.schedule_day {
@@ -278,6 +271,11 @@ h2.schedule_day {
 
 .schedule_list {
   padding:0px;
+  width: 100%;
+}
+
+.schedule_link {
+  text-decoration: none;
 }
 
 .schedule_time {
@@ -293,6 +291,9 @@ h2.schedule_day {
   margin-left: 15px;
 }
 
+.schedule_container h3, .schedule_container p {
+  color: black;
+}
 /** Speakers **/
 
 .speakers_image {

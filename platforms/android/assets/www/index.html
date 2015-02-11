@@ -75,15 +75,18 @@
 
 <script id="schedule-event-tmpl" type="text/x-handlebars-template">
     {{#.}}
-    <li><a href="#schedule/{{this.id}}" class="table-view-cell media schedule_list">
+    <li><div class="table-view-cell media schedule_list">
         <div class="schedule_time">
             <p>{{this.start_time}} - {{this.end_time}}</p>
         </div>
-        <div class="schedule_container">
-            <h3>{{this.title}}</h3>
-            <p>{{this.location.name}}</p>
+        <a href="#schedule/{{this.id}}" class="media table-view-cell schedule_link">
+            <div class="schedule_container">
+                <h3>{{this.title}}</h3>
+                <p>{{this.location.name}}</p>
+            </div>
+        </a>
         </div>
-    </a></li>
+    </li>
     {{/.}}
 </script>
 

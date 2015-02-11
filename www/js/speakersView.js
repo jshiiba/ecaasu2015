@@ -28,16 +28,21 @@ var SpeakersView = function(database) {
 		$('#speakers-tab-one').on('click', function() {
 			$('#speakers-tab-content').html(SpeakersView.tab_one());
 			self.loadSpeakerEvents("opening");
+			$('#speakers-tab-one').addClass('active');
+			$('#speakers-tab-two').removeClass('active');
 		});
 
 		$('#speakers-tab-two').on('click', function() {
 			$('#speakers-tab-content').html(SpeakersView.tab_two());
 			self.loadSpeakerEvents("closing");
+			$('#speakers-tab-one').removeClass('active');
+			$('#speakers-tab-two').addClass('active');
 		});
 
 		// Load first tab
 		$('#speakers-tab-content').html(SpeakersView.tab_one());
 		self.loadSpeakerEvents("opening");
+		$('#speakers-tab-one').addClass('active');
 	}
 
 	this.initialize();

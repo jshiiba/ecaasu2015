@@ -26,21 +26,31 @@ var WorkshopsView = function(database) {
 		$('#workshops-tab-one').on('click', function() {
 			$('#workshops-tab-content').html(WorkshopsView.tab_one());
 			self.loadDateEvents("2015-2-20");
+			$('#workshops-tab-one').addClass('active');
+			$('#workshops-tab-two').removeClass('active');
+			$('#workshops-tab-three').removeClass('active');
 		});
 
 		$('#workshops-tab-two').on('click', function() {
 			$('#workshops-tab-content').html(WorkshopsView.tab_two());
 			self.loadDateEvents("2015-2-21");
+			$('#workshops-tab-one').removeClass('active');
+			$('#workshops-tab-two').addClass('active');
+			$('#workshops-tab-three').removeClass('active');
 		});
 
 		$('#workshops-tab-three').on('click', function() {
 			$('#workshops-tab-content').html(WorkshopsView.tab_three());
 			self.loadDateEvents("2015-2-22");
+			$('#workshops-tab-one').removeClass('active');
+			$('#workshops-tab-two').removeClass('active');
+			$('#workshops-tab-three').addClass('active');
 		});
 
 		// Load first tab
 		$('#workshops-tab-content').html(WorkshopsView.tab_one());
 		self.loadDateEvents("2015-2-20");
+		$('#workshops-tab-one').addClass('active');
 	}
 
 	this.initialize();
