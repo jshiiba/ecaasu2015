@@ -806,6 +806,7 @@
 /Users/Jshiiba/Developer/ecaasu/platforms/android/assets/www/js/index.js \
 /Users/Jshiiba/Developer/ecaasu/platforms/android/assets/www/js/jquery.js \
 /Users/Jshiiba/Developer/ecaasu/platforms/android/assets/www/js/jquery.mobile-1.4.5.js \
+/Users/Jshiiba/Developer/ecaasu/platforms/android/assets/www/js/locationView.js \
 /Users/Jshiiba/Developer/ecaasu/platforms/android/assets/www/js/mapView.js \
 /Users/Jshiiba/Developer/ecaasu/platforms/android/assets/www/js/router.js \
 /Users/Jshiiba/Developer/ecaasu/platforms/android/assets/www/js/scheduleView.js \
