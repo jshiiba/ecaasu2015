@@ -50,6 +50,5 @@ var SpeakersView = function(database) {
 
 SpeakersView.tab_one 		= Handlebars.compile($("#speakers-tab-one-page").html());
 SpeakersView.tab_two 		= Handlebars.compile($("#speakers-tab-two-page").html());
-SpeakersView.tab_three 		= Handlebars.compile($("#speakers-tab-three-page").html());
 SpeakersView.template 		= Handlebars.compile($("#speakers-tmpl").html());
 SpeakersView.liTemplate 	= Handlebars.compile($("#speakers-event-tmpl").html());

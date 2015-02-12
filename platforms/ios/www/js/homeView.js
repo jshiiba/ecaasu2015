@@ -7,7 +7,7 @@ var HomeView = function() {
 
 	this.render = function() {
 		this.el.html(HomeView.template());
-        return this;
+    return this;
 	};
 
 	this.initialize();

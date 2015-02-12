@@ -85,7 +85,15 @@ var app = {
     // Handles view routing
     route: function() {
         router.addRoute('', function() {
-            $('body').html(new HomeView().render().el);
+            $('body').html(new SplashView().render().el);
+            
+            setTimeout( function () {
+                $( ".splash-screen" ).animate({
+                  top: "-100%"
+                }, 500, function () {
+                    router.load('home');
+                });
+            }, 2000);
         });
 
         router.addRoute('home', function() {

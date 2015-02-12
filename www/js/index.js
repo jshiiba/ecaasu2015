@@ -86,7 +86,7 @@ var app = {
     route: function() {
         router.addRoute('', function() {
             $('body').html(new SplashView().render().el);
-
+            
             setTimeout( function () {
                 $( ".splash-screen" ).animate({
                   top: "-100%"
