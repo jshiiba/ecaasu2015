@@ -11,7 +11,7 @@ var LocationView = function(database) {
 		return this;
 	};
 
-	this.loadLocations = function() {
+	this.registerEvents = function() {
 		var li = "";
 		this.db.findLocations(function(events) {
 			$.each(events, function(index, evt) {

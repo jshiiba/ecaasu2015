@@ -23,7 +23,7 @@ var SpeakersView = function(database) {
 		$('.event-list').html(li);
 	};
 
-	this.registerSpeakerEvents = function() {
+	this.registerEvents = function() {
 		var self = this;
 		$('#speakers-tab-one').on('click', function() {
 			$('#speakers-tab-content').html(SpeakersView.tab_one());

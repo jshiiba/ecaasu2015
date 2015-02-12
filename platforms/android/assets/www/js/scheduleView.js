@@ -21,7 +21,7 @@ var ScheduleView = function(database) {
 		});
 	};
 
-	this.registerScheduleEvents = function() {
+	this.registerEvents = function() {
 		var self = this;
 		$('#schedule-tab-one').on('click', function() {
 			$('#schedule-tab-content').html(ScheduleView.tab_one());

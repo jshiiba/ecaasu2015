@@ -443,7 +443,32 @@ h1.logo-name {
   height: 200px;
 }
 
-
+/** sliding transition css **/
+.page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-transform:translate3d(0,0,0);
+}
+ 
+.stage-center {
+    top: 0;
+    left: 0;
+}
+ 
+.stage-left {
+    left: -100%;
+}
+ 
+.stage-right {
+    left: 100%;
+}
+ 
+.transition {
+    -moz-transition-duration: .350s;
+    -webkit-transition-duration: .350s;
+    -o-transition-duration: .350s;
+}
 
 
 

@@ -62,28 +62,30 @@ var app = {
         }
 
         // Listens for URL change
-        $(window).on('hashchange', $.proxy(this.route, this)); 
+        $(window).off().on('hashchange', $.proxy(this.route, this)); 
 
         // Changes hash route to render view from home nav bar
-        $(document).on('click', '#home-navbar a', function() {
+        $(document).off().on('click', '#home-navbar a', function() {
             var hash = $(this).attr("data-href");
+            console.log("#home-navbar a Clicked!");
+            app.direction = "right";
             window.location.hash = hash;
         });
 
         // Changes hash route to render view nav bar
         $(document).on('click', 'div[data-role="header"] a', function() {
             var hash = $(this).attr("data-href");
+            console.log("header back button clicked!");
+            app.direction = "left";
             window.location.hash = hash;
         });
 
-        $(document).on('click', 'div[data-role="header"] a', function() {
-            var hash = $(this).attr("data-href");
-            window.location.hash = hash;
-        });
     },
 
     // Handles view routing
     route: function() {
+        var self = this;
+
         router.addRoute('', function() {
             $('body').html(new SplashView().render().el);
             
@@ -97,52 +99,119 @@ var app = {
         });
 
         router.addRoute('home', function() {
-            $('body').html(new HomeView().render().el);
+            app.homePage = new HomeView().render();
+
+            // View to home
+            $(app.homePage.el).attr('class', 'page stage-left');
+            $('body').append(app.homePage.el);
+
+            setTimeout( function() {
+                $(app.homePage.el).attr('class', 'page stage-center transition');
+                if (app.currentPage) {
+                    $(app.currentPage.el).attr('class', 'page stage-right transition');
+                    app.removeNonCenterViews();
+                }
+            });
         });  
 
         router.addRoute('schedule', function() {
-            var view = new ScheduleView(app.db).render();
-            $('body').html(view.el);
-            view.registerScheduleEvents();
+            self.slidePage(new ScheduleView(app.db).render());
         });
 
         router.addRoute('schedule/:id', function(id) {
+            app.direction = "right";
             app.db.findById(parseInt(id), function(evt){
-                $('body').html(new EventView(evt, "schedule").render().el);
+                app.slidePage(new EventView(evt, "schedule").render());
             });
         });
 
         router.addRoute('workshops', function() {
-            var view = new WorkshopsView(app.db).render();
-            $('body').html(view.el);
-            view.registerWorkshopEvents();
+            self.slidePage(new WorkshopsView(app.db).render());
         });
 
         router.addRoute('workshops/:id', function(id) {
+            app.direction = "right";
             app.db.findById(parseInt(id), function(evt){
-                $('body').html(new EventView(evt, "workshops").render().el);
+                app.slidePage(new EventView(evt, "workshops").render());
             });
         });
 
         router.addRoute('speakers', function() {
-            var view = new SpeakersView(app.db).render();
-            $('body').html(view.el);
-            view.registerSpeakerEvents();
+            app.slidePage(new SpeakersView(app.db).render());
         });
 
         router.addRoute('speakers/:id', function(id) {
+            app.direction = "right";
             app.db.findSpeakerById(parseInt(id), function(evt){
-                $('body').html(new EventView(evt, "speakers").render().el);
+                app.slidePage(new EventView(evt, "speakers").render());
             });
         });
 
         router.addRoute('location', function() {
-            var view = new LocationView(app.db).render();
-            $('body').html(view.el);
-            view.loadLocations();
+            self.slidePage(new LocationView(app.db).render());
         });
 
         router.start();
+    },
+
+    slidePage: function(view) {
+        // home to view, view to detail
+        if (app.direction == "right") {
+            $(view.el).attr('class', 'page stage-right');
+            $('body').append(view.el);
+            
+            setTimeout( function() {
+                console.log('register events');
+
+                if (typeof view.registerEvents === "function") {
+                    // home to view
+                    view.registerEvents();
+                    setTimeout( function() {
+                        console.log('transition');
+                        $(view.el).attr('class', 'page stage-center transition');
+                        $(app.homePage.el).attr('class', 'page stage-left transition');
+                        app.currentPage = view;
+                        app.removeNonCenterViews();
+                    }); 
+                } else {
+                    // view to detail
+                    console.log('view to detail');
+                    setTimeout( function() {
+                        console.log('transition');
+                        $(view.el).attr('class', 'page stage-center transition');
+                        $(app.currentPage.el).attr('class', 'page stage-left transition');
+                        app.currentPage = view;
+                        app.removeNonCenterViews();
+                    });          
+                }
+
+            });
+        } else {
+            // direction LEFT, detail to view
+            console.log('detail to view? or view to home? or both?');
+            $(view.el).attr('class', 'page stage-left');
+            $('body').append(view.el);
+
+            setTimeout( function() {
+                console.log('register events');
+                view.registerEvents();
+                setTimeout( function() {
+                    console.log('transition');
+                     $(view.el).attr('class', 'page stage-center transition');
+                    $(app.currentPage.el).attr('class', 'page stage-right transition');
+                    app.currentPage = view;
+                    app.removeNonCenterViews();
+                });
+            });
+        }
+     
+    },
+
+    removeNonCenterViews: function() {
+        setTimeout( function() {
+            console.log('remove stages');
+            $('.stage-right, .stage-left').not('homePage').remove();
+        }, 400);
     }
 };
 

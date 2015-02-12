@@ -21,7 +21,7 @@ var WorkshopsView = function(database) {
 		});
 	};
 
-	this.registerWorkshopEvents = function() {
+	this.registerEvents = function() {
 		var self = this;
 		$('#workshops-tab-one').on('click', function() {
 			$('#workshops-tab-content').html(WorkshopsView.tab_one());
