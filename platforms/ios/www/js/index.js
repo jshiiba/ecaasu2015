@@ -131,7 +131,7 @@ var app = {
 
         router.addRoute('workshops/:id', function(id) {
             app.direction = "right";
-            app.db.findById(parseInt(id), function(evt){
+            app.db.findWorkshopById(parseInt(id), function(evt){
                 app.slidePage(new EventView(evt, "workshops").render());
             });
         });
@@ -161,13 +161,10 @@ var app = {
             $('body').append(view.el);
             
             setTimeout( function() {
-                console.log('register events');
-
                 if (typeof view.registerEvents === "function") {
                     // home to view
                     view.registerEvents();
                     setTimeout( function() {
-                        console.log('transition');
                         $(view.el).attr('class', 'page stage-center transition');
                         $(app.homePage.el).attr('class', 'page stage-left transition');
                         app.currentPage = view;
@@ -175,9 +172,7 @@ var app = {
                     }); 
                 } else {
                     // view to detail
-                    console.log('view to detail');
                     setTimeout( function() {
-                        console.log('transition');
                         $(view.el).attr('class', 'page stage-center transition');
                         $(app.currentPage.el).attr('class', 'page stage-left transition');
                         app.currentPage = view;
@@ -188,15 +183,12 @@ var app = {
             });
         } else {
             // direction LEFT, detail to view
-            console.log('detail to view? or view to home? or both?');
             $(view.el).attr('class', 'page stage-left');
             $('body').append(view.el);
 
             setTimeout( function() {
-                console.log('register events');
                 view.registerEvents();
                 setTimeout( function() {
-                    console.log('transition');
                      $(view.el).attr('class', 'page stage-center transition');
                     $(app.currentPage.el).attr('class', 'page stage-right transition');
                     app.currentPage = view;
@@ -209,7 +201,6 @@ var app = {
 
     removeNonCenterViews: function() {
         setTimeout( function() {
-            console.log('remove stages');
             $('.stage-right, .stage-left').not('homePage').remove();
         }, 400);
     }

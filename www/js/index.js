@@ -131,7 +131,7 @@ var app = {
 
         router.addRoute('workshops/:id', function(id) {
             app.direction = "right";
-            app.db.findById(parseInt(id), function(evt){
+            app.db.findWorkshopById(parseInt(id), function(evt){
                 app.slidePage(new EventView(evt, "workshops").render());
             });
         });

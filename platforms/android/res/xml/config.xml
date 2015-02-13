@@ -28,7 +28,7 @@
     </feature>
     <name>ecaasu2015</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        An application containing a schedule and information about the 2015 ECAASU conference in Boston, MA.
     </description>
     <author email="jshiiba@gmail.com" href="">
         Justin Shiiba &amp; Chung Vuong

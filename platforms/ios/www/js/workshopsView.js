@@ -11,9 +11,9 @@ var WorkshopsView = function(database) {
         return this;
 	};
 
-	this.loadDateEvents = function(date) {
+	this.loadDateEvents = function(series_id) {
 		var li = "";
-		this.db.findByDate(date, function(events) {
+		this.db.findWorkshopsBySeries(series_id, function(events) {
 			$.each(events, function(index, evt) {
 				li += WorkshopsView.liTemplate(evt);
 			});
@@ -25,7 +25,7 @@ var WorkshopsView = function(database) {
 		var self = this;
 		$('#workshops-tab-one').on('click', function() {
 			$('#workshops-tab-content').html(WorkshopsView.tab_one());
-			self.loadDateEvents("2015-2-20");
+			self.loadDateEvents("1");
 			$('#workshops-tab-one').addClass('active');
 			$('#workshops-tab-two').removeClass('active');
 			$('#workshops-tab-three').removeClass('active');
@@ -33,7 +33,7 @@ var WorkshopsView = function(database) {
 
 		$('#workshops-tab-two').on('click', function() {
 			$('#workshops-tab-content').html(WorkshopsView.tab_two());
-			self.loadDateEvents("2015-2-21");
+			self.loadDateEvents("2");
 			$('#workshops-tab-one').removeClass('active');
 			$('#workshops-tab-two').addClass('active');
 			$('#workshops-tab-three').removeClass('active');
@@ -41,7 +41,7 @@ var WorkshopsView = function(database) {
 
 		$('#workshops-tab-three').on('click', function() {
 			$('#workshops-tab-content').html(WorkshopsView.tab_three());
-			self.loadDateEvents("2015-2-22");
+			self.loadDateEvents("0");
 			$('#workshops-tab-one').removeClass('active');
 			$('#workshops-tab-two').removeClass('active');
 			$('#workshops-tab-three').addClass('active');
@@ -49,7 +49,7 @@ var WorkshopsView = function(database) {
 
 		// Load first tab
 		$('#workshops-tab-content').html(WorkshopsView.tab_one());
-		self.loadDateEvents("2015-2-20");
+		self.loadDateEvents("1");
 		$('#workshops-tab-one').addClass('active');
 	}
 

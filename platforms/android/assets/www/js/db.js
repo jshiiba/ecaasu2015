@@ -43,7 +43,8 @@ var Database = function(success, error) {
 	};
 
 	this.findSpeakerById = function(id, callback) {
-		$.each(this.performers, function(index, evt) {
+		var performers = JSON.parse(window.localStorage.getItem("performers"));
+		$.each(performers, function(index, evt) {
 			if (evt.id == id) {
 				callLater(callback, evt);
 				return;
@@ -64,6 +65,37 @@ var Database = function(success, error) {
 		}
 		request.send();
 	};
+
+	this.findWorkshopById = function(workshop_id, callback) {
+		var request = new XMLHttpRequest();
+		var url = "http://ecaasu2015.herokuapp.com/api/workshops/" + workshop_id;
+		request.open("GET", url , true);
+		request.onreadystatechange = function() {
+			if (request.readyState == 4) {
+				if (request.status == 200 || request.status == 0) {
+					var workshop = JSON.parse(request.responseText);
+					callLater(callback, workshop);
+				}
+			}
+		}
+		request.send();
+	};
+
+	this.findWorkshopsBySeries = function(series_id, callback) {
+		var request = new XMLHttpRequest();
+		var url = "http://ecaasu2015.herokuapp.com/api/workshops/?series=" + series_id; 
+		request.open("GET", url , true);
+		request.onreadystatechange = function() {
+			if (request.readyState == 4) {
+				if (request.status == 200 || request.status == 0) {
+					var workshops = JSON.parse(request.responseText);
+					callLater(callback, workshops);
+				}
+			}
+		}
+		request.send();
+	};
+
 
     // Used to simulate async calls. This is done to provide a consistent interface with stores (like WebSqlStore)
     // that use async data access APIs
@@ -95,7 +127,7 @@ var Database = function(success, error) {
 
     this.initialize();
 
-    this.performers = [
+    var performers = [
     	{"id": 1, "time": "opening", "name": "Archipelag-A", "genre": "Poets", "description": "Archipelag-a was created in 1995 by 14 Filipina students at Brown University as an opportunity to voice the many perspectives of silenced Filipinas, and by extension all silenced women. Our words celebrate the multiplicity and diversity of the Filipino culture and experience. Archipelag-a has provided us with a forum - a space to write together, re-read old scripts, and re-perform 19 years of storytelling - to truly appreciate the uncanny similarities and timelessness of our experiences, as well as the beauty contained within the patchwork of our differences, We write because we have each discovered a profound connection through poetry and performance that inextricably ties us to one another, to those that came before us, and to those whom we hope will follow."},
     	{"id": 2, "time": "opening", "name": "Dan AKA Dan", "genre": "Hip Hop Artist", "description": "During the summer of 2013, Los Angeles-based alternative hip hop artist and Korean adoptee DANakaDAN (Dan Matthews) was reunited with his biological family in Korea, including an identical twin brother (who also raps) he never knew existed. Dan has since released the feature length documentary \"aka DAN\" that has been released via ISAtv, Hulu, and Drama Fever. Dan also released a companion full length album, \"Stuntman,\" which chronicles his experience with adoption, addiction, self, and identity. He currently works as the Director of Productions at International Secret Agents, an Asian American media network founded by Far East Movement and Wong Fu Productions."},
     	{"id": 3, "time": "opening", "name": "Alex Dang", "genre": "Slam Poet", "description": "Alex Dang is an aspiring poet from Portland, Oregon that started performing slam poetry at 17. Since then, he hasn't slowed down. He has been on the Portland Poetry Slam nationals team in 2013 and 2014. Combining a firework performance style and intimate writing, Alex has earned his way to becoming the Eugene Poetry Grand Slam Champion in 2014. Though his career has only begun, he has been a TEDx speaker for both University of Oregon and Reno, Nevada, and his chapbook, 'You Can Do Better,' is published through Where Are You Press. You can find him in the best burger spot in town or on a stage near you."},
@@ -109,4 +141,8 @@ var Database = function(success, error) {
     	{"id": 11, "time": "closing", "name": "Unofficial Project", "genre": "Dance", "description": "Founded in the Spring of 2005, Unofficial Project started off as a side project of dancers. Combining elements of Asian music and American hip hop culture, UPro promoted the link between the two genres. Since its debut, UPro has expanded and developed in terms of dance palette, taking on more modern forms of hiphop. Now, UPro strives to challenge themselves through competitions and performances; they aim to bring performances that remain true to their own artistic integrity and to showcase the creativity and inspirations of the individuals on the team. Unofficial Project has appeared at various locations at Boston University as well as around the New England area, including Northeastern University, Wellesley College, Boston College, and MIT. They have participated in various competitions including Elements, Prelude New England, and WOD Boston, and have recently placed second at Ring the Alarm 2014."},
     	{"id": 12, "time": "closing", "name": "Brian, Andrew, JRA", "genre": "Musicians", "description": "What happens when you mix together three great voices from three awesome dudes? You get this amazing trio: Brian Puspos, Andrew Garcia, and JRA! Born from a born into a family of performers, Brian Puspos was constantly around an entertainment environment. Being part of SorealCru, he helped them reach it to the finals. From dancing to singing, he has performed in over 30 countries, been apart of various prestigious crews, attained over 300,000 subscribers on Youtube. With one video with over 7 million views, he is a force of talent to be reckon with. Andrew Garcia is a singer/song writer, playing the guitar and singing since he was 18. In the 2010 American Idol competition, he made it as far as the top 9, being praised by all judges. Though eliminated, Andrew continues to perform and wow his audience with his genuine and amazing voice. Pior to the Idol competition, Andrew was a well known on Youtube. His account contains videos of him doing covers of songs or originals with also family and friends. He has been involved with various other Youtube artists, singing and guest acting. JR Aquino, also known as djkeeno (on Youtube), is from Anchorage Alaska. He has been singing since he was \"kneehigh\". He writes his own lyrics and melodies. He was on American Idol Season 4, making it to the top 44, and was in Team Cee-Lo on The Voice : Season 3. Bringing his amazing voice, he's a special performer you don't want to miss."}
     ];
+
+    window.localStorage.setItem('performers', JSON.stringify(performers));
 }
+
+
