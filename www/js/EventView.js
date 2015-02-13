@@ -5,10 +5,13 @@ var EventView = function(eventDetail, view) {
 		this.eventDetail = eventDetail;
 		if (view === "workshops") {
 			this.template = EventView.workshop_tmpl;
+			StatusBar.backgroundColorByHexString('#cc3399');
 		} else if (view === "speakers") {
 			this.template = EventView.speakers_tmpl;
+			StatusBar.backgroundColorByHexString('#00ccff');
 		} else {
 			this.template = EventView.schedule_tmpl;
+			StatusBar.backgroundColorByHexString('#32d200');
 		}
 	};
 

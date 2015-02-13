@@ -490,11 +490,6 @@ h1.logo-name {
 }
 /** Speakers **/
 
-.speakers_image {
-  width: 100px;
-  height: 100px;
-}
-
 .speakers_left {
   float: left;
   padding: 15px;
@@ -609,4 +604,113 @@ h1.logo-name {
     -moz-transition-duration: .350s;
     -webkit-transition-duration: .350s;
     -o-transition-duration: .350s;
+}
+
+.speaker-img {
+  width: 100px;
+  height: 100px;
+}
+
+@media screen {
+  .speaker-img-arch {
+    background-image: url('../img/performers/speaker-img-arch.png');
+  }
+
+  .speaker-img-dan {
+    background-image: url('../img/performers/speaker-img-dan.png');
+  }
+
+  .speaker-img-alex {
+    background-image: url('../img/performers/speaker-img-alex.png');
+  }
+
+  .speaker-img-jenn {
+    background-image: url('../img/performers/speaker-img-jenn.png');
+  }
+
+  .speaker-img-dumb {
+    background-image: url('../img/performers/speaker-img-dumb.png');
+  }    
+
+  .speaker-img-jeni {
+    background-image: url('../img/performers/speaker-img-jeni.png');
+  }
+
+  .speaker-img-lian {
+    background-image: url('../img/performers/speaker-img-lian.png');
+  }
+
+  .speaker-img-hari {
+    background-image: url('../img/performers/speaker-img-hari.png');
+  }
+
+  .speaker-img-dark {
+    background-image: url('../img/performers/speaker-img-dark.png');
+  }
+
+  .speaker-img-dere {
+    background-image: url('../img/performers/speaker-img-dere.png');
+  }
+
+  .speaker-img-unof {
+    background-image: url('../img/performers/speaker-img-unof.png');
+  }
+
+  .speaker-img-bria {
+    background-image: url('../img/performers/speaker-img-bria.png');
+  }
+}
+
+
+/** Media queries */
+@media (-webkit-min-device-pixel-ratio: 2), 
+(min-resolution: 192dpi) { 
+
+    .speaker-img-arch {
+      background-image: url('../img/performers/speaker-img-arch@2x.png');
+    }
+
+    .speaker-img-dan {
+      background-image: url('../img/performers/speaker-img-dan@2x.png');
+    }
+
+    .speaker-img-alex {
+      background-image: url('../img/performers/speaker-img-alex@2x.png');
+    }
+
+    .speaker-img-jenn {
+      background-image: url('../img/performers/speaker-img-jenn@2x.png');
+    }
+
+    .speaker-img-dumb {
+      background-image: url('../img/performers/speaker-img-dumb@2x.png');
+    }    
+
+    .speaker-img-jeni {
+      background-image: url('../img/performers/speaker-img-jeni@2x.png');
+    }
+
+    .speaker-img-lian {
+      background-image: url('../img/performers/speaker-img-lian@2x.png');
+    }
+
+    .speaker-img-hari {
+      background-image: url('../img/performers/speaker-img-hari@2x.png');
+    }
+
+    .speaker-img-dark {
+      background-image: url('../img/performers/speaker-img-dark@2x.png');
+    }
+
+    .speaker-img-dere {
+      background-image: url('../img/performers/speaker-img-dere@2x.png');
+    }
+
+    .speaker-img-unof {
+      background-image: url('../img/performers/speaker-img-unof@2x.png');
+    }
+
+    .speaker-img-bria {
+      background-image: url('../img/performers/speaker-img-bria@2x.png');
+    }
 }
