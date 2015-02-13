@@ -47,30 +47,33 @@
 
 <!-- Schedule templates -->
 <script id="schedule-tmpl" type="text/x-handlebars-template">
-    <div class="header" data-role="header">
-        <a class="header-button" data-href="home" href="#">
-        <span class="icon header-button-left"><img src="./img/back-arrow.png" /></span>
-        </a>
-        <h1 class="title">Schedule</h1>
-    </div> 
+    <div class="schedule-view-container">
+        <div class="header" data-role="header">
+            <a class="header-button" data-href="home" href="#">
+            <span class="icon header-button-left"><img src="./img/back-arrow.png" /></span>
+            </a>
+            <h1 class="title">Schedule</h1>
+        </div> 
 
-    <div data-role="tabs">
-        <div data-role="navbar">
-            <ul class="tabs">
-                <li><a id="schedule-tab-one" href="#" data-ajax="false">Day 1</a></li>
-                <li><a id="schedule-tab-two" href="#" data-ajax="false">Day 2</a></li>
-                <li><a id="schedule-tab-three" href="#" data-ajax="false">Day 3</a></li>
-            </ul>
+        <div data-role="tabs">
+            <div data-role="navbar">
+                <ul class="tabs">
+                    <li><a id="schedule-tab-one" href="#" data-ajax="false">Day 1</a></li>
+                    <li><a id="schedule-tab-two" href="#" data-ajax="false">Day 2</a></li>
+                    <li><a id="schedule-tab-three" href="#" data-ajax="false">Day 3</a></li>
+                </ul>
+            </div>
+
+            <div id="schedule-tab-content" class="view-content"></div>
         </div>
-
-        <div id="schedule-tab-content"></div>
-    </div>    
+    </div>  
 </script>
 
 <script id="schedule-tab-one-page" type="text/x-handlebars-template">
     <div class="ui-body-d ui-content schedule_body">
         <div class="ui-body-d ui-content">
             <div class="scroll">
+                <div class="tab-day">Friday, February 20th</div>
                 <ul data-role="listview" class="event-list table-view"></ul>
             </div>
         </div>
@@ -81,6 +84,7 @@
     <div class="ui-body-d ui-content schedule_body">
         <div class="ui-body-d ui-content">
             <div class="scroll">
+                <div class="tab-day">Saturday, February 21st</div>
                 <ul data-role="listview" class="event-list table-view"></ul>
             </div>
         </div>
@@ -91,6 +95,7 @@
     <div class="ui-body-d ui-content schedule_body">
         <div class="ui-body-d ui-content">
             <div class="scroll">
+                <div class="tab-day">Sunday, February 22nd</div>
                 <ul data-role="listview" class="event-list table-view"></ul>
             </div>
         </div>
@@ -100,13 +105,13 @@
 <script id="schedule-event-tmpl" type="text/x-handlebars-template">
     {{#.}}
     <li><div class="table-view-cell media schedule_list">
-        <div class="schedule_time">
+        <div class="schedule_time time">
             <p>{{this.start_time}} - {{this.end_time}}</p>
         </div>
         <a href="#schedule/{{this.id}}" class="media table-view-cell schedule_link">
             <div class="schedule_container">
                 <h3>{{this.title}}</h3>
-                <p>{{this.location.name}}</p>
+                <a href="geo:38.897096,-77.036545">{{this.location.name}}</a>
             </div>
         </a>
         </div>
@@ -115,17 +120,20 @@
 </script>
 
 <script id="schedule-event-details-tmpl" type="text/x-handlebars-template">
-    <div class="header" data-role="header">
-        <a class="header-button" data-href="schedule" href="#schedule">
-        <span class="icon header-button-left"><img src="./img/back-arrow.png" /></span>
-        </a>
-        <h1 class="title">{{this.title}}</h1>
-    </div> 
+    <div class="schedule-view-container">
+        <div class="header" data-role="header">
+            <a class="header-button" data-href="schedule" href="#schedule">
+            <span class="icon header-button-left"><img src="./img/back-arrow.png" /></span>
+            </a>
+            <h1 class="title">{{this.title}}</h1>
+        </div> 
 
-    <div class='details'>
-        <h2>{{this.location.name}}</h2>
-        <h2>{{this.start_time}} - {{this.end_time}}</h2>
-        <span class="location"></span>
+        <div class="event-details view-content">
+            <h1>{{this.title}}</h1>
+            <h2>at <a href="#">{{this.location.name}}</a></h2>
+            <div class="subheading"><h2>{{this.start_time}} - {{this.end_time}}</h2></div>
+            <span class="location"></span>
+        </div>
     </div>
 </script>
 <!-- /end Schedule templates -->
@@ -133,12 +141,13 @@
 
 <!-- Workshop templates -->
 <script id="workshop-tmpl" type="text/x-handlebars-template">
-    <div class="header" data-role="header">
-        <a class="header-button" data-href="home" href="#">
-        <span class="icon header-button-left"><img src="./img/back-arrow.png" /></span>
-        </a>
-        <h1 class="title">Workshops & Panels</h1>
-    </div> 
+    <div class="workshops-view-container">
+        <div class="header" data-role="header">
+            <a class="header-button" data-href="home" href="#">
+            <span class="icon header-button-left"><img src="./img/back-arrow.png" /></span>
+            </a>
+            <h1 class="title">Workshops & Panels</h1>
+        </div> 
 
     <div data-role="tabs">
         <div data-role="navbar">
@@ -147,9 +156,9 @@
                 <li><a id="workshops-tab-two" href="#" data-ajax="false">Series 2</a></li>
                 <li><a id="workshops-tab-three" href="#" data-ajax="false">Both</a></li>
             </ul>
-        </div>
 
-        <div id="workshops-tab-content"></div>
+            <div id="workshops-tab-content" class="view-content"></div>
+        </div>
     </div>
 </script>
 
@@ -202,52 +211,56 @@
 
 <!-- Speakers Templates -->
 <script id="speakers-tmpl" type="text/x-handlebars-template">
-    <div class="header" data-role="header">
-        <a class="header-button" data-href="home" href="#">
-        <span class="icon header-button-left">Back</span>
-        </a>
-        <h1 class="title">Speakers & Performers</h1>
-    </div> 
+    <div class="speakers-view-container">
+        <div class="header" data-role="header">
+            <a class="header-button" data-href="home" href="#">
+            <span class="icon header-button-left"><img src="./img/back-arrow.png" /></span>
+            </a>
+            <h1 class="title">Speakers & Performers</h1>
+        </div> 
 
-    <div data-role="tabs">
-        <div data-role="navbar">
-            <ul class="tabs">
-                <li><a id="speakers-tab-one" href="#" data-ajax="false">Opening</a></li>
-                <li><a id="speakers-tab-two" href="#" data-ajax="false">Closing</a></li>
-            </ul>
+        <div data-role="tabs">
+            <div data-role="navbar">
+                <ul class="tabs">
+                    <li><a id="speakers-tab-one" href="#" data-ajax="false">Opening</a></li>
+                    <li><a id="speakers-tab-two" href="#" data-ajax="false">Closing</a></li>
+                </ul>
+            </div>
+
+            <div id="speakers-tab-content" class="view-content"></div>
         </div>
-
-        <div id="speakers-tab-content"></div>
     </div>
 </script>
 
 <script id="speakers-event-tmpl" type="text/x-handlebars-template">
     {{#.}}
     <li><a href="#speakers/{{this.id}}" class="table-view-cell media">
-        <span class="speakers_left">
+        <div class="speakers_left">
             <img class='speakers_image' src='img/performers/{{this.id}}.jpg' />
-        </span>
-        <span class="speakers_right">
+        </div>
+        <div class="speakers_right">
             <h3>{{this.name}}</h3>
             <p>{{this.genre}}</p>
-        </span>
+        </div>
     </a></li>
     {{/.}}
 </script>
 
 <script id="speakers-event-details-tmpl" type="text/x-handlebars-template">
-    <div class="header" data-role="header">
-        <a class="header-button" data-href="speakers" href="#speakers">
-        <span class="icon header-button-left">Back</span>
-        </a>
-        <h1 class="title">{{this.name}}</h1>
-    </div> 
+    <div class="speakers-view-container">
+        <div class="header" data-role="header">
+            <a class="header-button" data-href="speakers" href="#speakers">
+            <span class="icon header-button-left"><img src="./img/back-arrow.png" /></span>
+            </a>
+            <h1 class="title">{{this.name}}</h1>
+        </div> 
 
-    <div class='details'>
-        <h2>{{this.name}}</h2>
-        <h2>{{this.genre}}</h2>
-        <img class='speakers_image_detail' src='img/performers/{{this.id}}.jpg' />
-        <p class="speakers_description">{{this.description}}</p>
+        <div class="speaker_details scroll-no-tabbar">
+            <h2>{{this.name}}</h2>
+            <h3>{{this.genre}}</h3>
+            <img class='speakers_image_detail' src='img/performers/{{this.id}}.jpg' />
+            <p class="speakers_description">{{this.description}}</p>
+        </div>
     </div>
 </script>
 
@@ -272,16 +285,18 @@
 
 <!-- locations templates -->
 <script id="location-tmpl" type="text/x-handlebars-template">
-    <div class="header" data-role="header">
-        <a class="header-button" data-href="home" href="#">
-        <span class="icon header-button-left">Back</span>
-        </a>
-        <h1 class="title">Locations</h1>
-    </div> 
+    <div class="locations-view-container">
+        <div class="header" data-role="header">
+            <a class="header-button" data-href="home" href="#">
+            <span class="icon header-button-left"><img src="./img/back-arrow.png" /></span>
+            </a>
+            <h1 class="title">Locations</h1>
+        </div> 
 
-    <div class="ui-body-d ui-content">
-        <div class="scroll-no-tabbar">
-            <ul data-role="listview" class="event-list table-view"></ul>
+        <div class="ui-body-d ui-content">
+            <div class="scroll-no-tabbar">
+                <ul data-role="listview" class="event-list table-view"></ul>
+            </div>
         </div>
     </div>
 </script>

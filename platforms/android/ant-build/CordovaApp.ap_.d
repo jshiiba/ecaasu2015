@@ -44,6 +44,7 @@
 /Users/Jshiiba/Developer/ecaasu/platforms/android/assets/www/css/style.css \
 /Users/Jshiiba/Developer/ecaasu/platforms/android/assets/www/fonts/Aller-Rg.woff \
 /Users/Jshiiba/Developer/ecaasu/platforms/android/assets/www/fonts/BebasNeue.woff \
+/Users/Jshiiba/Developer/ecaasu/platforms/android/assets/www/fonts/OpenSans-Regular.woff \
 /Users/Jshiiba/Developer/ecaasu/platforms/android/assets/www/img/back-arrow.png \
 /Users/Jshiiba/Developer/ecaasu/platforms/android/assets/www/img/logo.png \
 /Users/Jshiiba/Developer/ecaasu/platforms/android/assets/www/img/performers \

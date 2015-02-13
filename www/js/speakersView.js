@@ -15,12 +15,12 @@ var SpeakersView = function(database) {
 		var li = "";
 		var events = this.db.performers;
 
-		$.each(events, function(index, evt) {
-			if (evt.time == time) {
-				li += SpeakersView.liTemplate(evt);
-			}
+		this.db.findSpeakersByTime(time, function(perf) {
+			$.each(perf, function(index, p) {
+				li += SpeakersView.liTemplate(p);
+			});
+			$('.event-list').html(li);
 		});
-		$('.event-list').html(li);
 	};
 
 	this.registerEvents = function() {

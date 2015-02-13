@@ -52,6 +52,18 @@ var Database = function(success, error) {
 		});
 	};
 
+	this.findSpeakersByTime = function(time, callback) {
+		var performers = JSON.parse(window.localStorage.getItem("performers"));
+		var perArray = new Array();
+		$.each(performers, function(index, perf) {
+			if (perf.time == time) {
+				perArray.push(perf);
+			}
+		});
+		console.log("ARRAY: "+perArray);
+		callLater(callback, perArray);
+	};
+
 	this.findLocations = function(callback) {
 		var request = new XMLHttpRequest();
 		request.open("GET", "http://ecaasu2015.herokuapp.com/api/locations", true);
