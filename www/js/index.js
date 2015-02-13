@@ -45,11 +45,10 @@ var app = {
         // Check of browser supports touch events...
         if (document.documentElement.hasOwnProperty('ontouchstart')) {
             // ... if yes: register touch event listener to change the "selected" state of the item
-            $('body').on('touchstart', 'a', function(event) {
-                $(event.target).addClass('tappable-active');
+            $('body').on('scrollstart', 'a', function(event) {
             });
-            $('body').on('touchend', 'a', function(event) {
-                $(event.target).removeClass('tappable-active');
+            $('body').on('tap', 'a', function(event) {
+                $(event.target).addClass('tappable-active');
             });
         } else {
             // ... if not: register mouse events instead
