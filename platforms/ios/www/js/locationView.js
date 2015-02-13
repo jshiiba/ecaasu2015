@@ -24,7 +24,7 @@ var LocationView = function(database) {
 					var tempUrl = "geo:"+evt.lat+","+evt.long;
 					mapUrl = {"mapUrl": tempUrl};
 				} else {
-					console.error("Not correct Phone Platform, must be iOS or Android!");
+					alert("Not correct Phone Platform, must be iOS or Android!");
 				}
 				evt.mapUrl = mapUrl;
 				li += LocationView.liTemplate(evt);

@@ -92,17 +92,27 @@ var app = {
     // Handles view routing
     route: function() {
         var self = this;
-
+        console.log('route!!')
         router.addRoute('', function() {
-            $('body').html(new SplashView().render().el);
-            
-            setTimeout( function () {
-                $( ".splash-screen" ).animate({
-                  top: "-100%"
-                }, 500, function () {
+
+            setTimeout(function(){
+                if (window.device.platform == 'Android') {
+                    console.log('android');
+                    $('body').html(new SplashView().render().el);
+                    setTimeout( function () {
+                        $( ".splash-screen" ).animate({
+                          top: "-100%"
+                        }, 500, function () {
+                            router.load('home');
+                        });
+                    }, 2000);
+                } else if (window.device.platform == 'iOS') {
+                    console.log('route to home first');
                     router.load('home');
-                });
-            }, 2000);
+                } else {
+                    alert("Device Platform not supported!");
+                }
+            },1000);
         });
 
         router.addRoute('home', function() {

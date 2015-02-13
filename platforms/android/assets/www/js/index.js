@@ -94,15 +94,20 @@ var app = {
         var self = this;
 
         router.addRoute('', function() {
-            $('body').html(new SplashView().render().el);
-            
-            setTimeout( function () {
-                $( ".splash-screen" ).animate({
-                  top: "-100%"
-                }, 500, function () {
-                    router.load('home');
-                });
-            }, 2000);
+
+            if (device.platform == 'Android') {
+                $('body').html(new SplashView().render().el);
+                setTimeout( function () {
+                    $( ".splash-screen" ).animate({
+                      top: "-100%"
+                    }, 500, function () {
+                        router.load('home');
+                    });
+                }, 2000);
+            } else {
+                console.log('route to home first');
+                router.load('home');
+            }
         });
 
         router.addRoute('home', function() {

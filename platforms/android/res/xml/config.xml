@@ -29,7 +29,7 @@
     <feature name="Geocoder">
         <param name="android-package" value="plugin.google.maps.MyGeocoder" />
     </feature>
-    <name>ecaasu2015</name>
+    <name>ECAASU 2015</name>
     <description>
         An application containing a schedule and information about the 2015 ECAASU conference in Boston, MA.
     </description>
