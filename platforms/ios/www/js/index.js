@@ -66,7 +66,6 @@ var app = {
         // Changes hash route to render view from home nav bar
         $(document).off().on('click', '#home-navbar a', function() {
             var hash = $(this).attr("data-href");
-            console.log("#home-navbar a Clicked!");
             app.direction = "right";
             window.location.hash = hash;
         });
@@ -74,10 +73,19 @@ var app = {
         // Changes hash route to render view nav bar
         $(document).on('click', 'div[data-role="header"] a', function() {
             var hash = $(this).attr("data-href");
-            console.log("header back button clicked!");
             app.direction = "left";
             window.location.hash = hash;
         });
+
+        $(document).on('backbutton', function() {
+            app.direction = "left";
+            var hash = window.location.hash.split('/');
+            if (typeof hash[1] === 'undefined') {
+                window.location.hash = 'home';
+            } else {
+                window.location.hash = hash[0].substr(1);
+            }
+        })
 
     },
 

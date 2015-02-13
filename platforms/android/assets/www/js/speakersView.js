@@ -14,10 +14,10 @@ var SpeakersView = function(database) {
 
 	this.loadSpeakerEvents = function(time) {
 		var li = "";
-		var events = this.db.performers;
 
 		this.db.findSpeakersByTime(time, function(perf) {
 			$.each(perf, function(index, p) {
+				console.log(p.class);
 				li += SpeakersView.liTemplate(p);
 			});
 			$('.event-list').html(li);
