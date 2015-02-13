@@ -525,11 +525,21 @@ h1.logo-name {
 .event-details h1 {
   font-size: 30px;
 }
+.event-details h2, .schedule_container h2 {
+  margin: 10px 5px;
+}
 
 .subheading {
   background-color: #CFCFCF;
-  padding: 1px;
   color: #000000;
+  margin: 0px -15px;
+  padding: 15px;
+}
+
+.event-description {
+  font-size: 18px;
+  line-height: 1.4em;
+  margin: 10px 0;
 }
 
 /** sliding transition css **/
@@ -558,6 +568,3 @@ h1.logo-name {
     -webkit-transition-duration: .350s;
     -o-transition-duration: .350s;
 }
-
-
-

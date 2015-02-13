@@ -13,7 +13,7 @@ var WorkshopsView = function(database) {
 	};
 
 	this.loadDateEvents = function(series_id) {
-		var li = "";
+		var internalLi = "", externalLi = "";
 		this.db.findWorkshopsBySeries(series_id, function(events) {
 			$.each(events, function(index, evt) {
 				var mapUrl;
@@ -27,9 +27,15 @@ var WorkshopsView = function(database) {
 					console.error("Not correct Phone Platform, must be iOS or Android!");
 				}
 				evt.mapUrl = mapUrl;
-				li += WorkshopsView.liTemplate(evt);
+				if (evt['planned_by'] == 'internal') {
+					internalLi += WorkshopsView.liTemplate(evt);
+				}
+				else {
+					externalLi += WorkshopsView.liTemplate(evt);
+				}
 			});
-			$('.event-list').html(li);
+			$('.internal-workshops-list').html(internalLi);
+			$('.external-workshops-list').html(externalLi);
 		});
 	};
 

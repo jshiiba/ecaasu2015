@@ -111,7 +111,7 @@
         <a href="#schedule/{{this.id}}" class="media table-view-cell schedule_link">
             <div class="schedule_container">
                 <h3>{{this.title}}</h3>
-                <a href="{{this.mapUrl.mapUrl}}">{{this.location.name}}</a>
+                <h2>@<a href="{{this.mapUrl.mapUrl}}">{{this.location.name}}</a></h2>
             </div>
         </a>
         </div>
@@ -130,9 +130,9 @@
 
         <div class="event-details view-content">
             <h1>{{this.title}}</h1>
-            <h2>at <a href="{{this.mapUrl.mapUrl}}">{{this.location.name}}</a></h2>
+            <h2>@ <a href="{{this.mapUrl.mapUrl}}">{{this.location.name}}</a></h2>
             <div class="subheading"><h2>{{this.start_time}} - {{this.end_time}}</h2></div>
-            <span class="location"></span>
+            <div class="event-description"></div>
         </div>
     </div>
 </script>
@@ -188,7 +188,10 @@
 <script id="workshops-tab-one-page" type="text/x-handlebars-template">
     <div class="ui-body-d ui-content">
         <div class="scroll">
-            <ul data-role="listview" class="event-list table-view"></ul>
+            <div class="tab-day">Internal Workshops</div>
+            <ul data-role="listview" class="internal-workshops-list table-view"></ul>
+            <div class="tab-day">External Workshops</div>
+            <ul data-role="listview" class="external-workshops-list table-view"></ul>
         </div>
     </div>
 </script>
