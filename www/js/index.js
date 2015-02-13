@@ -74,10 +74,20 @@ var app = {
         // Changes hash route to render view nav bar
         $(document).on('click', 'div[data-role="header"] a', function() {
             var hash = $(this).attr("data-href");
-            console.log("header back button clicked!");
             app.direction = "left";
             window.location.hash = hash;
         });
+
+        $(document).on('backbutton', function() {
+            console.log("backbutton clicked");
+            app.direction = "left";
+            var hash = window.location.hash.split('/');
+            if (typeof hash[1] === 'undefined') {
+                window.location.hash = 'home';
+            } else {
+                window.location.hash = hash[0].substr(1);
+            }
+        })
 
     },
 

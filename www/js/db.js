@@ -76,7 +76,6 @@ var Database = function(success, error) {
 				perArray.push(perf);
 			}
 		});
-		console.log("ARRAY: "+perArray);
 		callLater(callback, perArray);
 	};
 

@@ -28,6 +28,8 @@ var Database = function(success, error) {
 					}
 					events.mapUrl = mapUrl;
 					callLater(callback, events);
+				} else {
+					navigator.notification.alert("Phone cannot connect to the internet!", null, "Network Error", "OK");
 				}
 			}
 		}
@@ -48,6 +50,8 @@ var Database = function(success, error) {
 						events[i].end_time = formatDate(new Date(events[i].end_time));
 					};
 					callLater(callback, events);
+				} else {
+					navigator.notification.alert("Phone cannot connect to the internet!", null, "Network Error", "OK");
 				}
 			}
 		}
@@ -72,7 +76,6 @@ var Database = function(success, error) {
 				perArray.push(perf);
 			}
 		});
-		console.log("ARRAY: "+perArray);
 		callLater(callback, perArray);
 	};
 
@@ -85,6 +88,8 @@ var Database = function(success, error) {
 					var events = JSON.parse(request.responseText);
 					callLater(callback, events);
 				}
+			} else {
+				navigator.notification.alert("Phone cannot connect to the internet!", null, "Network Error", "OK");
 			}
 		}
 		request.send();
@@ -110,6 +115,8 @@ var Database = function(success, error) {
 					}
 					workshop.mapUrl = mapUrl;
 					callLater(callback, workshop);
+				} else {
+					navigator.notification.alert("Phone cannot connect to the internet!", null, "Network Error", "OK");
 				}
 			}
 		}
@@ -125,6 +132,8 @@ var Database = function(success, error) {
 				if (request.status == 200 || request.status == 0) {
 					var workshops = JSON.parse(request.responseText);
 					callLater(callback, workshops);
+				} else {
+					navigator.notification.alert("Phone cannot connect to the internet!", null, "Network Error", "OK");
 				}
 			}
 		}

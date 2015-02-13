@@ -74,10 +74,38 @@ var app = {
         // Changes hash route to render view nav bar
         $(document).on('click', 'div[data-role="header"] a', function() {
             var hash = $(this).attr("data-href");
-            console.log("header back button clicked!");
             app.direction = "left";
             window.location.hash = hash;
         });
+
+        $(document).on('backbutton', function() {
+            console.log("backbutton clicked");
+            console.log('hash: '+window.location.hash);
+            app.direction = "left";
+
+            var hash = window.location.hash.split('/');
+            console.log('hash[0]: '+hash[0]);
+            console.log('hash[1]: '+hash[1]);
+            if (typeof hash[1] === 'undefined') {
+                console.log('view page');
+                window.location.hash = 'home';
+            } else {
+                console.log('substr: ' + hash[0].substr(1));
+                window.location.hash = hash[0].substr(1);
+            }
+
+            // var hash2 = window.location.hash.substr(2);
+            // console.log('hash2: '+hash2);
+            // //console.log("substr: "+hash);
+            // hash = hash.split('/');
+            // console.log('split '+hash);
+            // if (hash === 'speakers' || hash === 'workshops' || hash === 'location' || hash === 'shcedule') {
+            //     window.location.hash = 'home';
+            // } else {
+
+            // }
+            
+        })
 
     },
 
