@@ -3,6 +3,7 @@ var HomeView = function() {
 	this.initialize = function() {
 		var self = this;
 		this.el = $('<div/>');
+		StatusBar.backgroundColorByHexString('#fff');
 	};
 
 	this.render = function() {
