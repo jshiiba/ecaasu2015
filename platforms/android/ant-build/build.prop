@@ -1,5 +1,14 @@
 #Last build type
+#Fri, 13 Feb 2015 05:16:27 -0500
+#Fri, 13 Feb 2015 05:11:12 -0500
+#Fri, 13 Feb 2015 02:03:34 -0500
+#Fri, 13 Feb 2015 01:19:14 -0500
+<<<<<<<=HEAD
+#Tue, 10 Feb 2015 00:58:46 -0500
+#Tue, 10 Feb 2015 23:33:48 -0500
+=\=\=\=\=\=\=
 #Fri, 13 Feb 2015 04:03:05 -0500
+>>>>>>>=origin/master
 
 build.last.target=debug
 
