@@ -5,12 +5,13 @@ var Database = function(success, error) {
 	};
 
 	this.findById = function(id, callback) {
+		checkConnection();
 		var url = "http://ecaasu2015.herokuapp.com/api/events/" + id;
 		var request = new XMLHttpRequest();
 		request.open("GET", url, true);
 		request.onreadystatechange = function() {
 			if (request.readyState == 4) {
-				if (request.status == 200 || request.status == 0) {
+				if (request.status == 200) {
 					var events = JSON.parse(request.responseText);
 					// Converts Date to EST HH:MM
 					events.start_time = formatDate(new Date(events.start_time));
@@ -28,15 +29,26 @@ var Database = function(success, error) {
 					}
 					events.mapUrl = mapUrl;
 					callLater(callback, events);
-				} else {
+				} else if (request.status == 0) {
 					navigator.notification.alert("Phone cannot connect to the internet!", null, "Network Error", "OK");
 				}
 			}
 		}
 		request.send();
-	}
+	};
+
+ 	function checkConnection() {
+        if (navigator.connection.type === 'none') {
+        	if (navigator.notification) {
+		        navigator.notification.alert("No network detected!", null, "Error", 'OK');
+		    } else {
+		        alert("Error" ? ("Error" + ": " + "No network detected!") : "No network detected!");
+		    }
+        }
+    }
 
 	this.findByDate = function(date, callback) {
+		checkConnection();
 		var url = "http://ecaasu2015.herokuapp.com/api/events?date=" + date;
 		var request = new XMLHttpRequest();
 		request.open("GET", url, true);
@@ -50,8 +62,6 @@ var Database = function(success, error) {
 						events[i].end_time = formatDate(new Date(events[i].end_time));
 					};
 					callLater(callback, events);
-				} else {
-					navigator.notification.alert("Phone cannot connect to the internet!", null, "Network Error", "OK");
 				}
 			}
 		}
@@ -80,6 +90,7 @@ var Database = function(success, error) {
 	};
 
 	this.findLocations = function(callback) {
+		checkConnection();
 		var request = new XMLHttpRequest();
 		request.open("GET", "http://ecaasu2015.herokuapp.com/api/locations", true);
 		request.onreadystatechange = function() {
@@ -88,14 +99,13 @@ var Database = function(success, error) {
 					var events = JSON.parse(request.responseText);
 					callLater(callback, events);
 				}
-			} else {
-				navigator.notification.alert("Phone cannot connect to the internet!", null, "Network Error", "OK");
 			}
 		}
 		request.send();
 	};
 
 	this.findWorkshopById = function(workshop_id, callback) {
+		checkConnection();
 		var request = new XMLHttpRequest();
 		var url = "http://ecaasu2015.herokuapp.com/api/workshops/" + workshop_id;
 		request.open("GET", url , true);
@@ -115,8 +125,6 @@ var Database = function(success, error) {
 					}
 					workshop.mapUrl = mapUrl;
 					callLater(callback, workshop);
-				} else {
-					navigator.notification.alert("Phone cannot connect to the internet!", null, "Network Error", "OK");
 				}
 			}
 		}
@@ -124,6 +132,7 @@ var Database = function(success, error) {
 	};
 
 	this.findWorkshopsBySeries = function(series_id, callback) {
+		checkConnection();
 		var request = new XMLHttpRequest();
 		var url = "http://ecaasu2015.herokuapp.com/api/workshops/?series=" + series_id; 
 		request.open("GET", url , true);
@@ -132,8 +141,6 @@ var Database = function(success, error) {
 				if (request.status == 200 || request.status == 0) {
 					var workshops = JSON.parse(request.responseText);
 					callLater(callback, workshops);
-				} else {
-					navigator.notification.alert("Phone cannot connect to the internet!", null, "Network Error", "OK");
 				}
 			}
 		}

@@ -11,4 +11,5 @@
     <access origin="*" />
     <access origin="geo:*" launch-external="yes" />
     <preference name="DisallowOverscroll" value="true" />
+    <preference name="orientation" value="portrait" />
 </widget>
