@@ -149,8 +149,8 @@ var app = {
 
                 var seriesTimeDetailsMap = {
                     0: "Available at both Series 1 & 2",
-                    1: "Series 1 (2/20/15, 10:45AM-11:45AM)",
-                    2: "Series 2 (2/20/15, 1:30AM-2:30AM)"
+                    1: "Series 1 (2/21/15, 10:45AM-11:45AM)",
+                    2: "Series 2 (2/21/15, 1:30AM-2:30AM)"
                 };
 
                 var facilitatorsStr = "";
