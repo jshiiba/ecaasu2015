@@ -22,7 +22,7 @@
 <!-- Splash body -->
 <script id="splash-tmpl" type="text/x-handlebars-template">
     <div class="splash-screen">
-        <img src="./img/logo.png" />
+        <div class="ecaasu-logo" />
         <h1 class="logo-name">ECAASU 2015</h1>
     </div>
 </script>
@@ -31,7 +31,7 @@
 <script id="home-tmpl" type="text/x-handlebars-template">
     <div class="home-container">
         <div id="home-content">
-            <img src="./img/logo.png" />
+            <div class="ecaasu-logo" />
             <h1 class="logo-name">ECAASU 2015</h1>
 
             <ul id="home-navbar">
@@ -196,7 +196,7 @@
                 <h1>{{this.title}}</h1>
                 <div class="subheading"><h2>{{this.eventTimeDetails}}</h2></div>
                 <div class="subheading-white"><h2><b>Theme:</b> {{this.category}}</h2></div>
-                <div class="subheading-white"><h2><b>Facilitators:</b> {{this.location.name}}</h2></div>
+                <div class="subheading-white"><h2><b>Facilitators:</b> {{this.facilitators}}</h2></div>
                 <div class="subheading-white"><h2><b>Location:</b> <a href="{{this.mapUrl.mapUrl}}">{{this.location.name}}</a></h2></div>
                 <div class="workshop-description">{{this.description}}</div>
             </div>
@@ -282,7 +282,7 @@
         <div class="speaker_details scroll-no-tabbar">
             <h2>{{this.name}}</h2>
             <h3>{{this.genre}}</h3>
-            <img class='speakers_image_detail' src='img/performers/{{this.id}}.jpg' />
+            <div class='speaker-detail-img {{this.detailClass}}' />
             <p class="speakers_description">{{this.description}}</p>
         </div>
     </div>

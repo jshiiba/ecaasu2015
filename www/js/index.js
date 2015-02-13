@@ -152,6 +152,15 @@ var app = {
                     1: "Series 1 (2/20/15, 10:45AM-11:45AM)",
                     2: "Series 2 (2/20/15, 1:30AM-2:30AM)"
                 };
+
+                var facilitatorsStr = "";
+                if (facilitators = evt['people']) {
+                    $.each(facilitators, function(index, fac) {
+                        facilitatorsStr += ", " + fac.name;
+                    });
+                    facilitatorsStr = facilitatorsStr.substr(2);
+                }
+                evt.facilitators = facilitatorsStr;
                 evt.eventTimeDetails = seriesTimeDetailsMap[evt['series_no']];
                 evt.category = evt.category.charAt(0).toUpperCase() + evt.category.slice(1);
                 app.slidePage(new EventView(evt, "workshops").render());

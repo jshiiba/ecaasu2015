@@ -94,7 +94,7 @@ body {
     box-flex: 1;
     font-weight: normal;
     margin: 0 auto;
-    width: 75%;
+    width: 70%;
 }
 
 .header-button {
@@ -186,7 +186,7 @@ li>a * {
 
 a {
   text-decoration: none;
-  color: #353535;
+  color: #2A5DB0;
 }
 
 .button {
@@ -342,10 +342,6 @@ h2.schedule_day {
   width: 100%;
 }
 
-.schedule_link {
-  text-decoration: none;
-}
-
 .schedule_time {
   background-color: #CFCFCF;
   padding: 1px;
@@ -358,7 +354,7 @@ h2.schedule_day {
 .workshop_link h3 {
   margin: 0 0 10px 0;
 }
-.workshop_link {
+.workshop_link, .schedule_link {
   text-decoration: none;
   color: #000000;
 }
@@ -609,9 +605,26 @@ h1.logo-name {
 .speaker-img {
   width: 100px;
   height: 100px;
+  background-size: 100px 100px;
+}
+.speaker-detail-img {
+  width: 300px;
+  height: 300px;
+  background-size: 300px 300px;
+  margin: 0 auto;
+}
+.ecaasu-logo {
+  margin: 0 auto;
+  width: 120px;
+  height: 120px;
+  background-size: 120px 120px;
 }
 
 @media screen {
+  .ecaasu-logo {
+    background-image: url('../img/logo.png');
+  }
+
   .speaker-img-arch {
     background-image: url('../img/performers/speaker-img-arch.png');
   }
@@ -659,12 +672,74 @@ h1.logo-name {
   .speaker-img-bria {
     background-image: url('../img/performers/speaker-img-bria.png');
   }
+
+  .speaker-img-ryan {
+    background-image: url('../img/performers/speaker-img-ryan.png');
+  }
+
+  .speaker-img-sama {
+    background-image: url('../img/performers/speaker-img-sama.png');
+  }
+
+  .speaker-img-rang {
+    background-image: url('../img/performers/speaker-img-rang.png');
+  }
+
+  .speaker-detail-img-arch {
+    background-image: url('../img/performers/speaker-detail-img-arch.png');
+  }
+  .speaker-detail-img-dan {
+    background-image: url('../img/performers/speaker-detail-img-dan.png');
+  }
+  .speaker-detail-img-alex {
+    background-image: url('../img/performers/speaker-detail-img-alex.png');
+  }
+  .speaker-detail-img-jenn {
+    background-image: url('../img/performers/speaker-detail-img-jenn.png');
+  }
+  .speaker-detail-img-rang {
+    background-image: url('../img/performers/speaker-detail-img-rang.png');
+  }
+  .speaker-detail-img-dumb {
+    background-image: url('../img/performers/speaker-detail-img-dumb.png');
+  }
+  .speaker-detail-img-jeni {
+    background-image: url('../img/performers/speaker-detail-img-jeni.png');
+  }
+  .speaker-detail-img-lian {
+    background-image: url('../img/performers/speaker-detail-img-lian.png');
+  }
+  .speaker-detail-img-hari {
+    background-image: url('../img/performers/speaker-detail-img-hari.png');
+  }
+  .speaker-detail-img-dark {
+    background-image: url('../img/performers/speaker-detail-img-dark.png');
+  }
+  .speaker-detail-img-dere {
+    background-image: url('../img/performers/speaker-detail-img-dere.png');
+  }
+  .speaker-detail-img-sama {
+    background-image: url('../img/performers/speaker-detail-img-sama.png');
+  }
+  .speaker-detail-img-unof {
+    background-image: url('../img/performers/speaker-detail-img-unof.png');
+  }
+  .speaker-detail-img-bria {
+    background-image: url('../img/performers/speaker-detail-img-bria.png');
+  }
+  .speaker-detail-img-ryan {
+    background-image: url('../img/performers/speaker-detail-img-ryan.png');
+  }
 }
 
 
 /** Media queries */
 @media (-webkit-min-device-pixel-ratio: 2), 
 (min-resolution: 192dpi) { 
+
+    .ecaasu-logo {
+      background-image: url('../img/logo@2x.png');
+    }
 
     .speaker-img-arch {
       background-image: url('../img/performers/speaker-img-arch@2x.png');
@@ -712,5 +787,65 @@ h1.logo-name {
 
     .speaker-img-bria {
       background-image: url('../img/performers/speaker-img-bria@2x.png');
+    }
+
+    .speaker-img-ryan {
+      background-image: url('../img/performers/speaker-img-ryan@2x.png');
+    }
+
+    .speaker-img-sama {
+      background-image: url('../img/performers/speaker-img-sama@2x.png');
+    }
+
+    .speaker-img-rang {
+      background-image: url('../img/performers/speaker-img-rang@2x.png');
+    }
+
+
+    .speaker-detail-img-arch {
+      background-image: url('../img/performers/speaker-detail-img-arch@2x.png');
+    }
+    .speaker-detail-img-dan {
+      background-image: url('../img/performers/speaker-detail-img-dan@2x.png');
+    }
+    .speaker-detail-img-alex {
+      background-image: url('../img/performers/speaker-detail-img-alex@2x.png');
+    }
+    .speaker-detail-img-jenn {
+      background-image: url('../img/performers/speaker-detail-img-jenn@2x.png');
+    }
+    .speaker-detail-img-rang {
+      background-image: url('../img/performers/speaker-detail-img-rang@2x.png');
+    }
+    .speaker-detail-img-dumb {
+      background-image: url('../img/performers/speaker-detail-img-dumb@2x.png');
+    }
+    .speaker-detail-img-jeni {
+      background-image: url('../img/performers/speaker-detail-img-jeni@2x.png');
+    }
+    .speaker-detail-img-lian {
+      background-image: url('../img/performers/speaker-detail-img-lian@2x.png');
+    }
+    .speaker-detail-img-hari {
+      background-image: url('../img/performers/speaker-detail-img-hari@2x.png');
+    }
+    .speaker-detail-img-dark {
+      background-image: url('../img/performers/speaker-detail-img-dark@2x.png');
+    }
+    .speaker-detail-img-dere {
+      background-image: url('../img/performers/speaker-detail-img-dere@2x.png');
+    }
+    .speaker-detail-img-sama {
+      background-image: url('../img/performers/speaker-detail-img-sama@2x.png');
+    }
+    .speaker-detail-img-unof {
+      background-image: url('../img/performers/speaker-detail-img-unof@2x.png');
+    }
+    .speaker-detail-img-bria {
+      background-image: url('../img/performers/speaker-detail-img-bria@2x.png');
+    }
+
+    .speaker-detail-img-ryan {
+      background-image: url('../img/performers/speaker-detail-img-ryan@2x.png');
     }
 }

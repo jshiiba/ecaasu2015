@@ -92,12 +92,10 @@ var app = {
     // Handles view routing
     route: function() {
         var self = this;
-        console.log('route!!')
         router.addRoute('', function() {
 
             setTimeout(function(){
                 if (window.device.platform == 'Android') {
-                    console.log('android');
                     $('body').html(new SplashView().render().el);
                     setTimeout( function () {
                         $( ".splash-screen" ).animate({
@@ -107,7 +105,6 @@ var app = {
                         });
                     }, 2000);
                 } else if (window.device.platform == 'iOS') {
-                    console.log('route to home first');
                     router.load('home');
                 } else {
                     alert("Device Platform not supported!");
@@ -155,6 +152,15 @@ var app = {
                     1: "Series 1 (2/20/15, 10:45AM-11:45AM)",
                     2: "Series 2 (2/20/15, 1:30AM-2:30AM)"
                 };
+
+                var facilitatorsStr = "";
+                if (facilitators = evt['people']) {
+                    $.each(facilitators, function(index, fac) {
+                        facilitatorsStr += ", " + fac.name;
+                    });
+                    facilitatorsStr = facilitatorsStr.substr(2);
+                }
+                evt.facilitators = facilitatorsStr;
                 evt.eventTimeDetails = seriesTimeDetailsMap[evt['series_no']];
                 evt.category = evt.category.charAt(0).toUpperCase() + evt.category.slice(1);
                 app.slidePage(new EventView(evt, "workshops").render());

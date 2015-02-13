@@ -92,22 +92,24 @@ var app = {
     // Handles view routing
     route: function() {
         var self = this;
-
         router.addRoute('', function() {
 
-            if (device.platform == 'Android') {
-                $('body').html(new SplashView().render().el);
-                setTimeout( function () {
-                    $( ".splash-screen" ).animate({
-                      top: "-100%"
-                    }, 500, function () {
-                        router.load('home');
-                    });
-                }, 2000);
-            } else {
-                console.log('route to home first');
-                router.load('home');
-            }
+            setTimeout(function(){
+                if (window.device.platform == 'Android') {
+                    $('body').html(new SplashView().render().el);
+                    setTimeout( function () {
+                        $( ".splash-screen" ).animate({
+                          top: "-100%"
+                        }, 500, function () {
+                            router.load('home');
+                        });
+                    }, 2000);
+                } else if (window.device.platform == 'iOS') {
+                    router.load('home');
+                } else {
+                    alert("Device Platform not supported!");
+                }
+            },1000);
         });
 
         router.addRoute('home', function() {
@@ -150,6 +152,15 @@ var app = {
                     1: "Series 1 (2/20/15, 10:45AM-11:45AM)",
                     2: "Series 2 (2/20/15, 1:30AM-2:30AM)"
                 };
+
+                var facilitatorsStr = "";
+                if (facilitators = evt['people']) {
+                    $.each(facilitators, function(index, fac) {
+                        facilitatorsStr += ", " + fac.name;
+                    });
+                    facilitatorsStr = facilitatorsStr.substr(2);
+                }
+                evt.facilitators = facilitatorsStr;
                 evt.eventTimeDetails = seriesTimeDetailsMap[evt['series_no']];
                 evt.category = evt.category.charAt(0).toUpperCase() + evt.category.slice(1);
                 app.slidePage(new EventView(evt, "workshops").render());
