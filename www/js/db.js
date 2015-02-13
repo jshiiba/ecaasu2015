@@ -15,6 +15,18 @@ var Database = function(success, error) {
 					// Converts Date to EST HH:MM
 					events.start_time = formatDate(new Date(events.start_time));
 					events.end_time = formatDate(new Date(events.end_time));
+
+					var mapUrl;
+					if (device.platform == 'iOS') {
+						var tempUrl = "maps://?q="+events.location.lat+","+events.location.long;
+						mapUrl = {"mapUrl": tempUrl};
+					} else if (device.platform == 'Android') {
+						var tempUrl = "geo:"+events.location.lat+","+events.location.long;
+						mapUrl = {"mapUrl": tempUrl};
+					} else {
+						console.error("Not correct Phone Platform, must be iOS or Android!");
+					}
+					events.mapUrl = mapUrl;
 					callLater(callback, events);
 				}
 			}
@@ -86,6 +98,17 @@ var Database = function(success, error) {
 			if (request.readyState == 4) {
 				if (request.status == 200 || request.status == 0) {
 					var workshop = JSON.parse(request.responseText);
+					var mapUrl;
+					if (device.platform == 'iOS') {
+						var tempUrl = "maps://?q="+workshop.location.lat+","+workshop.location.long;
+						mapUrl = {"mapUrl": tempUrl};
+					} else if (device.platform == 'Android') {
+						var tempUrl = "geo:"+workshop.location.lat+","+workshop.location.long;
+						mapUrl = {"mapUrl": tempUrl};
+					} else {
+						console.error("Not correct Phone Platform, must be iOS or Android!");
+					}
+					workshop.mapUrl = mapUrl;
 					callLater(callback, workshop);
 				}
 			}

@@ -15,6 +15,17 @@ var WorkshopsView = function(database) {
 		var li = "";
 		this.db.findWorkshopsBySeries(series_id, function(events) {
 			$.each(events, function(index, evt) {
+				var mapUrl;
+				if (device.platform == 'iOS') {
+					var tempUrl = "maps://?q="+evt.location.lat+","+evt.location.long;
+					mapUrl = {"mapUrl": tempUrl};
+				} else if (device.platform == 'Android') {
+					var tempUrl = "geo:"+evt.location.lat+","+evt.location.long;
+					mapUrl = {"mapUrl": tempUrl};
+				} else {
+					console.error("Not correct Phone Platform, must be iOS or Android!");
+				}
+				evt.mapUrl = mapUrl;
 				li += WorkshopsView.liTemplate(evt);
 			});
 			$('.event-list').html(li);
