@@ -16,6 +16,7 @@ var LocationView = function(database) {
 		var li = "";
 		this.db.findLocations(function(events) {
 			$.each(events, function(index, evt) {
+				var mapUrl = "";
 				if (device.platform == 'iOS') {
 					var tempUrl = "maps://?q="+evt.lat+","+evt.long;
 					mapUrl = {"mapUrl": tempUrl};

@@ -9,5 +9,6 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
+    <access origin="geo:*" launch-external="yes" />
     <preference name="DisallowOverscroll" value="true" />
 </widget>

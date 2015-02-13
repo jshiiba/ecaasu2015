@@ -87,9 +87,9 @@ var Database = function(success, error) {
 				if (request.status == 200 || request.status == 0) {
 					var events = JSON.parse(request.responseText);
 					callLater(callback, events);
+				} else {
+					navigator.notification.alert("Phone cannot connect to the internet!", null, "Network Error", "OK");
 				}
-			} else {
-				navigator.notification.alert("Phone cannot connect to the internet!", null, "Network Error", "OK");
 			}
 		}
 		request.send();
