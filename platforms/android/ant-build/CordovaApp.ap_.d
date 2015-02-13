@@ -874,6 +874,7 @@
 /Users/Chung/projects/repos/ecaasu2015/platforms/android/assets/www/plugins/org.apache.cordova.device \
 /Users/Chung/projects/repos/ecaasu2015/platforms/android/assets/www/plugins/org.apache.cordova.device-motion \
 /Users/Chung/projects/repos/ecaasu2015/platforms/android/assets/www/plugins/org.apache.cordova.device-orientation \
+/Users/Chung/projects/repos/ecaasu2015/platforms/android/assets/www/plugins/org.apache.cordova.network-information \
 /Users/Chung/projects/repos/ecaasu2015/platforms/android/assets/www/plugins/org.apache.cordova.statusbar \
 /Users/Chung/projects/repos/ecaasu2015/platforms/android/assets/www/plugins/plugin.google.maps \
 /Users/Chung/projects/repos/ecaasu2015/platforms/android/assets/www/plugins/plugin.http.request \
@@ -886,6 +887,9 @@
 /Users/Chung/projects/repos/ecaasu2015/platforms/android/assets/www/plugins/org.apache.cordova.device-orientation/www/compass.js \
 /Users/Chung/projects/repos/ecaasu2015/platforms/android/assets/www/plugins/org.apache.cordova.device-orientation/www/CompassError.js \
 /Users/Chung/projects/repos/ecaasu2015/platforms/android/assets/www/plugins/org.apache.cordova.device-orientation/www/CompassHeading.js \
+/Users/Chung/projects/repos/ecaasu2015/platforms/android/assets/www/plugins/org.apache.cordova.network-information/www \
+/Users/Chung/projects/repos/ecaasu2015/platforms/android/assets/www/plugins/org.apache.cordova.network-information/www/Connection.js \
+/Users/Chung/projects/repos/ecaasu2015/platforms/android/assets/www/plugins/org.apache.cordova.network-information/www/network.js \
 /Users/Chung/projects/repos/ecaasu2015/platforms/android/assets/www/plugins/org.apache.cordova.statusbar/www \
 /Users/Chung/projects/repos/ecaasu2015/platforms/android/assets/www/plugins/org.apache.cordova.statusbar/www/statusbar.js \
 /Users/Chung/projects/repos/ecaasu2015/platforms/android/assets/www/plugins/plugin.google.maps/www \

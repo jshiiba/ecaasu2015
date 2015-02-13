@@ -16,6 +16,9 @@ var WorkshopsView = function(database) {
 		var li = "";
 		this.db.findWorkshopsBySeries(series_id, function(events) {
 			$.each(events, function(index, evt) {
+				if (evt.category) {
+					evt.category = evt.category.charAt(0).toUpperCase() + evt.category.slice(1);
+				}
 				var mapUrl;
 				if (device.platform == 'iOS') {
 					var tempUrl = "maps://?q="+evt.location.lat+","+evt.location.long;
@@ -27,6 +30,7 @@ var WorkshopsView = function(database) {
 					console.error("Not correct Phone Platform, must be iOS or Android!");
 				}
 				evt.mapUrl = mapUrl;
+				
 				li += WorkshopsView.liTemplate(evt);
 			});
 			$('.event-list').html(li);

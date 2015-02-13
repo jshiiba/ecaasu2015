@@ -77,6 +77,10 @@
                         {
                             "xml": "false",
                             "count": 1
+                        },
+                        {
+                            "xml": "true",
+                            "count": 1
                         }
                     ],
                     "CoreMotion.framework": [
@@ -104,6 +108,10 @@
                         },
                         {
                             "xml": "<feature name=\"Geolocation\"><param name=\"ios-package\" value=\"CDVLocation\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"NetworkStatus\"><param name=\"ios-package\" value=\"CDVConnection\" /></feature>",
                             "count": 1
                         },
                         {
@@ -191,6 +199,9 @@
             "PACKAGE_NAME": "com.jshiiba.ecaasu"
         },
         "org.apache.cordova.geolocation": {
+            "PACKAGE_NAME": "com.jshiiba.ecaasu"
+        },
+        "org.apache.cordova.network-information": {
             "PACKAGE_NAME": "com.jshiiba.ecaasu"
         },
         "org.apache.cordova.statusbar": {
