@@ -131,6 +131,14 @@ var app = {
         router.addRoute('workshops/:id', function(id) {
             app.direction = "right";
             app.db.findWorkshopById(parseInt(id), function(evt){
+
+                var seriesTimeDetailsMap = {
+                    0: "Available at both Series 1 & 2",
+                    1: "Series 1 (2/20/15, 10:45AM-11:45AM)",
+                    2: "Series 2 (2/20/15, 1:30AM-2:30AM)"
+                };
+                evt.eventTimeDetails = seriesTimeDetailsMap[evt['series_no']];
+                evt.category = evt.category.charAt(0).toUpperCase() + evt.category.slice(1);
                 app.slidePage(new EventView(evt, "workshops").render());
             });
         });

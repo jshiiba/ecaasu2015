@@ -93,6 +93,8 @@ body {
     -moz-box-flex: 1;
     box-flex: 1;
     font-weight: normal;
+    margin: 0 auto;
+    width: 75%;
 }
 
 .header-button {
@@ -180,6 +182,11 @@ li>a {
 
 li>a * {
     pointer-events: none;
+}
+
+a {
+  text-decoration: none;
+  color: #353535;
 }
 
 .button {
@@ -345,8 +352,18 @@ h2.schedule_day {
   color: #000000;
 }
 
+.workshop_container {
+  padding: 15px;
+}
+.workshop_link h3 {
+  margin: 0 0 10px 0;
+}
+.workshop_link {
+  text-decoration: none;
+  color: #000000;
+}
 .tab-day {
-  margin: 20px 15px;
+  padding: 20px 15px;
   font-size: 26px;
   color: #000000;
 }
@@ -356,7 +373,8 @@ h2.schedule_day {
 }
 
 .schedule_container {
-  margin-left: 15px;
+  margin: 0px 15px;
+  padding: 15px 0px;
 }
 
 /** Splash Screen **/
@@ -459,8 +477,13 @@ h1.logo-name {
   background-color: #ea1e45;
 }
 
+.bg-gray {
+  background-color: #CFCFCF;
+}
+
 .schedule_container h3 {
   color: black;
+  margin: 0;
 }
 .schedule_container p {
   color: #333333;
@@ -468,21 +491,20 @@ h1.logo-name {
 /** Speakers **/
 
 .speakers_image {
-  width: 100%;
+  width: 100px;
   height: 100px;
 }
 
 .speakers_left {
   float: left;
   padding: 15px;
-  width: 35%;
   min-height: 100px;
 }
 
 .speakers_right {
   float: left;
   padding: 35px 5px;
-  width: 65%;
+  width: 60%;
   min-height: 100px;
 }
 .speakers_right h3 {
@@ -526,7 +548,7 @@ h1.logo-name {
   font-size: 30px;
 }
 .event-details h2, .schedule_container h2 {
-  margin: 10px 5px;
+  margin: 10px 0px;
 }
 
 .subheading {
@@ -536,10 +558,30 @@ h1.logo-name {
   padding: 15px;
 }
 
+.subheading-white {
+  color: #000000;
+  margin: 0px -15px;
+  padding: 15px;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 20px;
+}
+.workshop-details {
+  padding: 15px;
+}
+.workshop-details h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.workshop-description {
+  padding: 15px 0px;
+}
 .event-description {
   font-size: 18px;
   line-height: 1.4em;
   margin: 10px 0;
+}
+.locations-view-container li a {
+  padding: 15px;
 }
 
 /** sliding transition css **/

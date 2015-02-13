@@ -37,7 +37,7 @@
             <ul id="home-navbar">
                 <li><a data-href="location" href="#" class="red">Locations</a></li>
                 <li><a data-href="schedule" href="#" class="green">Schedule</a></li>
-                <li><a data-href="workshops" href="#" class="purple">Workshops & Panels</a></li>
+                <li><a data-href="workshops" href="#" class="purple">Workshops</a></li>
                 <li><a data-href="speakers" href="#" class="blue">Speakers & Performers</a></li>
             </ul>
         </div>
@@ -128,11 +128,13 @@
             <h1 class="title">{{this.title}}</h1>
         </div> 
 
-        <div class="event-details view-content">
-            <h1>{{this.title}}</h1>
-            <h2>@ <a href="{{this.mapUrl.mapUrl}}">{{this.location.name}}</a></h2>
-            <div class="subheading"><h2>{{this.start_time}} - {{this.end_time}}</h2></div>
-            <div class="event-description"></div>
+        <div class="scroll-no-tabbar">
+            <div class="event-details view-content">
+                <h1>{{this.title}}</h1>
+                <h2>@ <a href="{{this.mapUrl.mapUrl}}">{{this.location.name}}</a></h2>
+                <div class="subheading"><h2>{{this.start_time}} - {{this.end_time}}</h2></div>
+                <div class="event-description"></div>
+            </div>
         </div>
     </div>
 </script>
@@ -164,34 +166,49 @@
 
 <script id="workshop-event-tmpl" type="text/x-handlebars-template">
     {{#.}}
-    <li><a href="#workshops/{{this.id}}" class="table-view-cell media">
-        <h3>{{this.title}}</h3>
-        <p><a href="{{this.mapUrl.mapUrl}}">{{this.location.name}}</a></p>
-    </a></li>
+
+    <li>
+        <div class="table-view-cell media schedule_list">
+            <a href="#workshops/{{this.id}}" class="table-view-cell media workshop_link">
+                <div class="workshop_container">
+                    <h3>{{this.title}}</h3>
+                    <h2>Theme: {{this.category}}</h2>
+                    <h2>@<a href="{{this.mapUrl.mapUrl}}">{{this.location.name}}</a></h2>
+                </div>
+            </a>
+        </div>
+    </li>
+
     {{/.}}
 </script>
 
 <script id="workshop-event-details-tmpl" type="text/x-handlebars-template">
-    <div class="header" data-role="header">
-        <a class="header-button" data-href="workshops" href="#workshops">
-        <span class="icon header-button-left"><img src="./img/back-arrow.png" /></span>
-        </a>
-        <h1 class="title">{{this.title}}</h1>
-    </div> 
+    <div class="workshops-view-container">
+        <div class="header" data-role="header">
+            <a class="header-button" data-href="workshops" href="#workshops">
+            <span class="icon header-button-left"><img src="./img/back-arrow.png" /></span>
+            </a>
+            <h1 class="title">{{this.title}}</h1>
+        </div> 
 
-    <div class='details'>
-        <h2><a href="{{this.mapUrl.mapUrl}}">{{this.location.name}}</a></h2>
-        <h2>{{this.start_time}} - {{this.end_time}}</h2>
+        <div class="scroll-no-tabbar">
+            <div class="workshop-details view-content">
+                <h1>{{this.title}}</h1>
+                <div class="subheading"><h2>{{this.eventTimeDetails}}</h2></div>
+                <div class="subheading-white"><h2><b>Theme:</b> {{this.category}}</h2></div>
+                <div class="subheading-white"><h2><b>Facilitators:</b> {{this.location.name}}</h2></div>
+                <div class="subheading-white"><h2><b>Location:</b> <a href="{{this.mapUrl.mapUrl}}">{{this.location.name}}</a></h2></div>
+                <div class="workshop-description">{{this.description}}</div>
+            </div>
+        </div>
     </div>
 </script>
 
 <script id="workshops-tab-one-page" type="text/x-handlebars-template">
     <div class="ui-body-d ui-content">
         <div class="scroll">
-            <div class="tab-day">Internal Workshops</div>
-            <ul data-role="listview" class="internal-workshops-list table-view"></ul>
-            <div class="tab-day">External Workshops</div>
-            <ul data-role="listview" class="external-workshops-list table-view"></ul>
+            <div class="tab-day bg-gray">10:45AM - 11:45AM</div>
+            <ul data-role="listview" class="event-list table-view"></ul>
         </div>
     </div>
 </script>
@@ -199,6 +216,7 @@
 <script id="workshops-tab-two-page" type="text/x-handlebars-template">
     <div class="ui-body-d ui-content">
         <div class="scroll">
+            <div class="tab-day bg-gray">1:30PM - 2:30PM</div>
             <ul data-role="listview" class="event-list table-view"></ul>
         </div>
     </div>
@@ -207,6 +225,7 @@
 <script id="workshops-tab-three-page" type="text/x-handlebars-template">
     <div class="ui-body-d ui-content">
         <div class="scroll">
+            <div class="tab-day bg-gray">Internal Workshops</div>
             <ul data-role="listview" class="event-list table-view"></ul>
         </div>
     </div>
@@ -293,14 +312,14 @@
     <div class="locations-view-container">
         <div class="header" data-role="header">
             <a class="header-button" data-href="home" href="#">
-            <span class="icon header-button-left"><img src="./img/back-arrow.png" /></span>
+                <span class="icon header-button-left"><img src="./img/back-arrow.png" /></span>
             </a>
             <h1 class="title">Locations</h1>
         </div> 
 
         <div class="ui-body-d ui-content">
             <div class="scroll-no-tabbar">
-                <ul data-role="listview" class="event-list table-view"></ul>
+                <ul data-role="listview" class="event-list table-view view-content"></ul>
             </div>
         </div>
     </div>
