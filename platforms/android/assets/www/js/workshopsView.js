@@ -4,6 +4,7 @@ var WorkshopsView = function(database) {
 		var self = this;
 		this.el = $('<div/>');
 		this.db = database;
+		StatusBar.backgroundColorByHexString('#cc3399');
 	};
 
 	this.render = function() {

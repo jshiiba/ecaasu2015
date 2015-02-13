@@ -1,6 +1,7 @@
 var ScheduleView = function(database) {
 
 	this.initialize = function() {
+		StatusBar.backgroundColorByHexString('#32d200');
 		var self = this;
 		this.el = $('<div/>');
 		this.db = database;

@@ -4,6 +4,7 @@ var LocationView = function(database) {
 		var self = this;
 		this.el = $('<div/>');
 		this.db = database;
+		StatusBar.backgroundColorByHexString('#ea1e45');
 	};
 
 	this.render = function() {

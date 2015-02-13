@@ -4,6 +4,7 @@ var SpeakersView = function(database) {
 		var self = this;
 		this.el = $('<div/>');
 		this.db = database;
+		StatusBar.backgroundColorByHexString('#00ccff');
 	};
 
 	this.render = function() {
